@@ -1,0 +1,15 @@
+# Pipeline for Develop PR
+
+name: $(Date:yyyyMMdd)$(Rev:r)
+
+trigger: none
+pr:
+- develop
+
+pool:
+  vmImage: $(VMImage)
+
+steps:
+- template: Base-Steps.yml
+  parameters:
+    NugetVersionSuffix : '-alpha'

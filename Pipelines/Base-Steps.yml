@@ -1,0 +1,74 @@
+parameters:
+  Publish: 'false'
+  NugetVersionSuffix: ''
+
+steps:
+
+  - task: SonarCloudPrepare@1
+    inputs:
+     SonarCloud: 'Sonarcloud'
+     organization: 'guruumeditation-github'
+     scannerMode: 'MSBuild'
+     projectKey: 'Guruumeditation_Arcana-Toolkit'
+     projectName: 'Arcana-Toolkit'   
+
+  - task: DotNetCoreCLI@2
+    displayName: 'Build solution'
+    inputs:
+     command: 'build'
+     projects: '**/*.csproj'
+     arguments: '--configuration $(buildConfiguration)'
+
+  - task: DotNetCoreCLI@2
+    displayName: 'Run tests'
+    inputs:
+     command: 'test'
+     projects: '**/Net.Arcanastudio.Bit4You.Tests.csproj'
+     testRunTitle: 'Toolkit Tests'
+     arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
+
+  - task: SonarCloudAnalyze@1
+    displayName: 'Run Code Analysis'
+    
+  - task: SonarCloudPublish@1
+    displayName: 'Publish Code Analysis'
+    inputs:
+     pollingTimeoutSec: '300'
+
+  - task: ExtractVersionFromTag@1
+    inputs:
+        projectFolderPath: '$(Build.SourcesDirectory)'
+
+  - bash: echo "##vso[task.setvariable variable=NUGET_VERSION]$(MAJOR).$(MINOR).$(PATCH)${{ parameters.NugetVersionSuffix}}"
+
+  # Pack NuGet packages.
+  - task: DotNetCoreCLI@2
+    displayName: 'Nuget Pack'
+    inputs:
+      command: 'pack'
+      configuration: 'release'
+      versioningScheme: byEnvVar
+      versionEnvVar:   NUGET_VERSION
+      packagesToPack: '**/Net.Arcanastudio.Bit4You.csproj' 
+      verbosityPack: Normal
+      packDirectory: '$(Build.ArtifactStagingDirectory)/packages'
+
+  # Pack NuGet packages.
+  - task: DotNetCoreCLI@2
+    displayName: 'Nuget Pack'
+    inputs:
+      command: 'pack'
+      configuration: 'release'
+      versioningScheme: byEnvVar
+      versionEnvVar:   NUGET_VERSION
+      packagesToPack: '**/Net.Arcanastudio.Bit4You.Model.csproj' 
+      verbosityPack: Normal
+      packDirectory: '$(Build.ArtifactStagingDirectory)/packages'
+  
+  - ${{ if eq(parameters.Publish, 'true')}}:
+    - task: DotNetCoreCLI@2
+      displayName: dotnet nuget push
+      inputs:
+        command: custom
+        custom: nuget
+        arguments: push $(Build.ArtifactStagingDirectory)\packages\*.nupkg  --source https://api.nuget.org/v3/index.json --api-key $(NugetKey) --no-symbols true

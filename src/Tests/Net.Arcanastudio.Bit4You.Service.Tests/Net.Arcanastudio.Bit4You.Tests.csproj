@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="5.10.3" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
+    <PackageReference Include="Moq" Version="4.15.2" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.1.2" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.1.2" />
+    <PackageReference Include="coverlet.collector" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Net.ArcanaStudio.Toolkit.Testing.MsTest" Version="0.1.0-alpha" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Net.Arcanastudio.Bit4You.Net.Model\Net.Arcanastudio.Bit4You.Model.csproj" />
+    <ProjectReference Include="..\..\Net.Arcanastudio.Bit4You\Net.Arcanastudio.Bit4You.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="TestData\Token_Succeed.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
