@@ -16,14 +16,14 @@ steps:
     displayName: 'Build solution'
     inputs:
      command: 'build'
-     projects: '**/Arcana.Toolkit.csproj'
+     projects: '**/*.csproj'
      arguments: '--configuration $(buildConfiguration)'
 
   - task: DotNetCoreCLI@2
     displayName: 'Run tests'
     inputs:
      command: 'test'
-     projects: '**/Arcana.Toolkit.Tests.csproj'
+     projects: '**/Net.Arcanastudio.Bit4You.Tests.csproj'
      testRunTitle: 'Toolkit Tests'
      arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
 
@@ -49,7 +49,7 @@ steps:
       configuration: 'release'
       versioningScheme: byEnvVar
       versionEnvVar:   NUGET_VERSION
-      packagesToPack: '**/Arcana.Toolkit.csproj' 
+      packagesToPack: '**/Net.Arcanastudio.Bit4You.csproj' 
       verbosityPack: Normal
       packDirectory: '$(Build.ArtifactStagingDirectory)/packages'
 
@@ -61,7 +61,7 @@ steps:
       configuration: 'release'
       versioningScheme: byEnvVar
       versionEnvVar:   NUGET_VERSION
-      packagesToPack: '**/Arcana.Toolkit.Testing.MsTest.csproj' 
+      packagesToPack: '**/Net.Arcanastudio.Bit4You.Model.csproj' 
       verbosityPack: Normal
       packDirectory: '$(Build.ArtifactStagingDirectory)/packages'
   
