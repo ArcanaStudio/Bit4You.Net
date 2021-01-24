@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Bit4You.Net.Payload
+namespace Net.Arcanastudio.Bit4You.Payload
 {
     internal class CreatePortfolioOrderPayload : SimulablePayloadBase
     {

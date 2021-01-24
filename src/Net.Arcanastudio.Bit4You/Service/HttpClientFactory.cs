@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Net.Http.Headers;
 
-namespace Bit4You.Net.Service
+namespace Net.Arcanastudio.Bit4You.Service
 {
     internal class HttpClientFactory : IHttpClientFactory
     {

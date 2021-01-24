@@ -1,12 +1,14 @@
 ﻿using System.Threading.Tasks;
-using Bit4You.Net.Payload;
-using Bit4You.Net.Response;
-using Bit4You.Net.Service;
-using Bit4You.Service.Tests.Helpers;
+using Arcana.Toolkit.Testing.MsTest;
+using Arcana.Toolkit.Testing.MsTest.Attributes;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Net.Arcanastudio.Bit4You.Payload;
+using Net.Arcanastudio.Bit4You.Response;
+using Net.Arcanastudio.Bit4You.Service;
+using Net.Arcanastudio.Bit4You.Tests.Helpers;
 
-namespace Bit4You.Service.Tests
+namespace Net.Arcanastudio.Bit4You.Tests
 {
     [TestClass]
     public class Bit4YouServiceTest

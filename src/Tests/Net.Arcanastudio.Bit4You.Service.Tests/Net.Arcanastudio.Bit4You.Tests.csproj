@@ -16,10 +16,12 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Net.ArcanaStudio.Toolkit.Testing.MsTest" Version="0.1.0-alpha" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Bit4You.Net\Bit4You.Net.csproj" />
+    <ProjectReference Include="..\..\Net.Arcanastudio.Bit4You.Net.Model\Net.Arcanastudio.Bit4You.Model.csproj" />
+    <ProjectReference Include="..\..\Net.Arcanastudio.Bit4You\Net.Arcanastudio.Bit4You.csproj" />
   </ItemGroup>
 
   <ItemGroup>

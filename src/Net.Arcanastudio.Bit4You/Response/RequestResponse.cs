@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace Bit4You.Net.Response
+namespace Net.Arcanastudio.Bit4You.Response
 {
     public class RequestResponse
     {

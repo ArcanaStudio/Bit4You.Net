@@ -2,16 +2,13 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Runtime.CompilerServices;
-using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-using Bit4You.Net.Extensions;
-using Bit4You.Net.Payload;
-using Bit4You.Net.Response;
+using Net.Arcanastudio.Bit4You.Extensions;
+using Net.Arcanastudio.Bit4You.Payload;
+using Net.Arcanastudio.Bit4You.Response;
 
-[assembly: InternalsVisibleTo("Bit4You.Service.Tests")]
-namespace Bit4You.Net.Service
+namespace Net.Arcanastudio.Bit4You.Service
 {
     internal class Bit4YouService : IBit4YouService
     {

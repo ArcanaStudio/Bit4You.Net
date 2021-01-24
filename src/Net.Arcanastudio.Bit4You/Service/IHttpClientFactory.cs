@@ -1,6 +1,6 @@
 ﻿using System.Net.Http;
 
-namespace Bit4You.Net.Service
+namespace Net.Arcanastudio.Bit4You.Service
 {
     public interface IHttpClientFactory
     {

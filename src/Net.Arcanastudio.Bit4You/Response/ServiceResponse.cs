@@ -1,4 +1,4 @@
-﻿namespace Bit4You.Net.Response
+﻿namespace Net.Arcanastudio.Bit4You.Response
 {
     internal class ServiceResponse<T>
     {

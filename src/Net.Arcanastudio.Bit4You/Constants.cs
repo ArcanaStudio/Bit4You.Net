@@ -1,4 +1,4 @@
-﻿namespace Bit4You.Net
+﻿namespace Net.Arcanastudio.Bit4You
 {
     internal static class Constants
     {

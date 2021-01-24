@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Bit4You.Net.Payload;
-using Bit4You.Net.Response;
+using Net.Arcanastudio.Bit4You.Payload;
+using Net.Arcanastudio.Bit4You.Response;
 
-namespace Bit4You.Net.Service
+namespace Net.Arcanastudio.Bit4You.Service
 {
     internal interface IBit4YouService
     {

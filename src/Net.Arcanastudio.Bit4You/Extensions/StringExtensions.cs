@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace Bit4You.Net.Extensions
+namespace Net.Arcanastudio.Bit4You.Extensions
 {
     internal static class StriµngExtensions
     {

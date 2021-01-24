@@ -1,6 +1,7 @@
 ﻿using System.Text.Json;
+using Arcana.Toolkit.Testing.MsTest;
 
-namespace Bit4You.Service.Tests.Helpers
+namespace Net.Arcanastudio.Bit4You.Tests.Helpers
 {
     public static class Extensions
     {

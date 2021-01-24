@@ -1,7 +1,8 @@
 ﻿using System.Net.Http;
-using Bit4You.Net.Service;
+using Arcana.Toolkit.Testing.MsTest;
+using Net.Arcanastudio.Bit4You.Service;
 
-namespace Bit4You.Service.Tests.Helpers
+namespace Net.Arcanastudio.Bit4You.Tests.Helpers
 {
     public class FakeHttpClientFactory<T> : IHttpClientFactory
     {
