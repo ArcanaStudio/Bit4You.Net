@@ -1,0 +1,524 @@
+[
+  {
+    "iso": "USDT-BTC",
+    "name": "Bitcoin",
+    "precision": 2,
+    "value": 34094.29,
+    "change": -1.62,
+    "spread": 0.35,
+    "supply": 18614887.5
+  },
+  {
+    "iso": "USDT-ETH",
+    "name": "Ethereum",
+    "precision": 2,
+    "value": 1373.47,
+    "change": 0.04,
+    "spread": 0.35,
+    "supply": 114466365.374
+  },
+  {
+    "iso": "USDT-LTC",
+    "name": "Litecoin",
+    "precision": 2,
+    "value": 133.36,
+    "change": -2.09,
+    "spread": 0.37,
+    "supply": 66902075
+  },
+  {
+    "iso": "USDT-BCH",
+    "name": "Bitcoin Cash",
+    "precision": 2,
+    "value": 411.62,
+    "change": 1.15,
+    "spread": 0.37,
+    "supply": 18641181.25
+  },
+  {
+    "iso": "USDT-TRX",
+    "name": "TRON",
+    "precision": 4,
+    "value": 0.03182,
+    "change": -4.96,
+    "spread": 0.38,
+    "supply": 100850743811.66246
+  },
+  {
+    "iso": "USDT-DASH",
+    "name": "Dash",
+    "precision": 2,
+    "value": 104.42,
+    "change": 0.26,
+    "spread": 0.38,
+    "supply": 9950195.05347106
+  },
+  {
+    "iso": "USDT-ETC",
+    "name": "Ethereum Classic",
+    "precision": 2,
+    "value": 7.58049999,
+    "change": -0.92,
+    "spread": 0.37,
+    "supply": 116313299
+  },
+  {
+    "iso": "USDT-XRP",
+    "name": "XRP",
+    "precision": 4,
+    "value": 0.39636,
+    "change": 37.63,
+    "spread": 0.4,
+    "supply": 99990831162
+  },
+  {
+    "iso": "USDT-OMG",
+    "name": "OmiseGO",
+    "precision": 2,
+    "value": 3.47619999,
+    "change": 1.34,
+    "spread": 0.38,
+    "supply": 140245398.24513277
+  },
+  {
+    "iso": "USDT-ZEC",
+    "name": "Zcash",
+    "precision": 2,
+    "value": 84.31999999,
+    "change": -1.94,
+    "spread": 0.36,
+    "supply": 11023662.5
+  },
+  {
+    "iso": "USDT-ADA",
+    "name": "Cardano",
+    "precision": 4,
+    "value": 0.36548,
+    "change": 4.54,
+    "spread": 0.36,
+    "supply": 45000000000
+  },
+  {
+    "iso": "USDT-XMR",
+    "name": "Monero",
+    "precision": 2,
+    "value": 139.50999999,
+    "change": -0.43,
+    "spread": 0.36,
+    "supply": 17826786.2559741
+  },
+  {
+    "iso": "USDT-NEO",
+    "name": "NEO",
+    "precision": 2,
+    "value": 22.451,
+    "change": -0.9,
+    "spread": 0.44,
+    "supply": 100000000
+  },
+  {
+    "iso": "USDT-EOS",
+    "name": "EOS",
+    "precision": 2,
+    "value": 2.9123,
+    "change": 6.51,
+    "spread": 0.37,
+    "supply": 1026619312.144
+  },
+  {
+    "iso": "USDT-IOTA",
+    "name": "MIOTA",
+    "precision": 4,
+    "value": 0.4294,
+    "change": 6.21,
+    "spread": 0.42,
+    "supply": 2779530283
+  },
+  {
+    "iso": "USDT-XLM",
+    "name": "Stellar",
+    "precision": 4,
+    "value": 0.31439,
+    "change": 6.22,
+    "spread": 0.43,
+    "supply": 50001803528.87172
+  },
+  {
+    "iso": "USDT-BCHSV",
+    "name": "Bitcoin Cash SV",
+    "precision": 2,
+    "value": 178.9149633,
+    "change": 2.87,
+    "spread": 1.03,
+    "supply": 0
+  },
+  {
+    "iso": "USDT-DAN",
+    "name": "Daneel",
+    "precision": 4,
+    "value": 0.00351499,
+    "change": 0,
+    "spread": 0.2,
+    "supply": 0
+  },
+  {
+    "iso": "USDT-LINK",
+    "name": "Chainlink",
+    "precision": 4,
+    "value": 23.6031,
+    "change": 2.81,
+    "spread": 0.37,
+    "supply": 1000000000
+  },
+  {
+    "iso": "USDT-BTT",
+    "name": "BitTorrent",
+    "precision": 6,
+    "value": 0.0003802,
+    "change": -2.24,
+    "spread": 0.38,
+    "supply": 990000000000
+  },
+  {
+    "iso": "USDT-ZIL",
+    "name": "Zilliqa",
+    "precision": 6,
+    "value": 0.07395,
+    "change": 9.95,
+    "spread": 0.45,
+    "supply": 0
+  },
+  {
+    "iso": "USDT-XTZ",
+    "name": "Tezos",
+    "precision": 4,
+    "value": 2.8921,
+    "change": -1.02,
+    "spread": 0.4,
+    "supply": 758385521.686489
+  },
+  {
+    "iso": "USDT-FLR",
+    "name": "Spark",
+    "precision": 6,
+    "value": 0,
+    "change": 0,
+    "spread": 0,
+    "supply": 0
+  },
+  {
+    "iso": "BTC-ETH",
+    "name": "Ethereum",
+    "precision": 6,
+    "value": 0.040284,
+    "change": 1.67,
+    "spread": 0.35,
+    "supply": 114466365.374
+  },
+  {
+    "iso": "BTC-LTC",
+    "name": "Litecoin",
+    "precision": 6,
+    "value": 0.00391199,
+    "change": -0.51,
+    "spread": 0.38,
+    "supply": 66902075
+  },
+  {
+    "iso": "BTC-BCH",
+    "name": "Bitcoin Cash",
+    "precision": 6,
+    "value": 0.012076,
+    "change": 2.78,
+    "spread": 0.38,
+    "supply": 18641181.25
+  },
+  {
+    "iso": "BTC-TRX",
+    "name": "TRON",
+    "precision": 6,
+    "value": 9.3e-7,
+    "change": -2.11,
+    "spread": 2.17,
+    "supply": 100850743811.66246
+  },
+  {
+    "iso": "BTC-DASH",
+    "name": "Dash",
+    "precision": 6,
+    "value": 0.003064,
+    "change": 1.86,
+    "spread": 0.42,
+    "supply": 9950195.05347106
+  },
+  {
+    "iso": "BTC-ETC",
+    "name": "Ethereum Classic",
+    "precision": 6,
+    "value": 0.0002227,
+    "change": 0.91,
+    "spread": 0.44,
+    "supply": 116313299
+  },
+  {
+    "iso": "BTC-XRP",
+    "name": "XRP",
+    "precision": 4,
+    "value": 0.00001164,
+    "change": 39.9,
+    "spread": 0.6,
+    "supply": 99990831162
+  },
+  {
+    "iso": "BTC-OMG",
+    "name": "OmiseGO",
+    "precision": 8,
+    "value": 0.0001019,
+    "change": 2.83,
+    "spread": 0.44,
+    "supply": 140245398.24513277
+  },
+  {
+    "iso": "BTC-ZEC",
+    "name": "Zcash",
+    "precision": 8,
+    "value": 0.002473,
+    "change": -0.44,
+    "spread": 0.51,
+    "supply": 11023662.5
+  },
+  {
+    "iso": "BTC-ADA",
+    "name": "Cardano",
+    "precision": 8,
+    "value": 0.00001074,
+    "change": 6.44,
+    "spread": 0.37,
+    "supply": 45000000000
+  },
+  {
+    "iso": "BTC-XMR",
+    "name": "Monero",
+    "precision": 8,
+    "value": 0.00409499,
+    "change": 1.09,
+    "spread": 0.42,
+    "supply": 17826786.2559741
+  },
+  {
+    "iso": "BTC-NEO",
+    "name": "NEO",
+    "precision": 8,
+    "value": 0.000659,
+    "change": 0.61,
+    "spread": 0.5,
+    "supply": 100000000
+  },
+  {
+    "iso": "BTC-EOS",
+    "name": "EOS",
+    "precision": 8,
+    "value": 0.0000855,
+    "change": 8.23,
+    "spread": 0.46,
+    "supply": 1026619312.144
+  },
+  {
+    "iso": "BTC-IOTA",
+    "name": "MIOTA",
+    "precision": 8,
+    "value": 0.00001258,
+    "change": 7.61,
+    "spread": 0.56,
+    "supply": 2779530283
+  },
+  {
+    "iso": "BTC-XLM",
+    "name": "Stellar",
+    "precision": 8,
+    "value": 0.00000923,
+    "change": 7.95,
+    "spread": 0.43,
+    "supply": 50001803528.87172
+  },
+  {
+    "iso": "BTC-BCHSV",
+    "name": "Bitcoin Cash SV",
+    "precision": 6,
+    "value": 0.00527113,
+    "change": 4.58,
+    "spread": 1.06,
+    "supply": 0
+  },
+  {
+    "iso": "BTC-LINK",
+    "name": "Chainlink",
+    "precision": 8,
+    "value": 0.00069233,
+    "change": 4.43,
+    "spread": 0.37,
+    "supply": 1000000000
+  },
+  {
+    "iso": "BTC-ZIL",
+    "name": "Zilliqa",
+    "precision": 8,
+    "value": 0.00000217,
+    "change": 11.28,
+    "spread": 0,
+    "supply": 0
+  },
+  {
+    "iso": "BTC-XTZ",
+    "name": "Tezos",
+    "precision": 8,
+    "value": 0.0000848,
+    "change": 0.47,
+    "spread": 0.46,
+    "supply": 758385521.686489
+  },
+  {
+    "iso": "ETH-LTC",
+    "name": "Litecoin",
+    "precision": 6,
+    "value": 0.09724,
+    "change": -1.92,
+    "spread": 0.57,
+    "supply": 66902075
+  },
+  {
+    "iso": "ETH-BCH",
+    "name": "Bitcoin Cash",
+    "precision": 6,
+    "value": 0.29863015,
+    "change": 0.69,
+    "spread": 0.91,
+    "supply": 18641181.25
+  },
+  {
+    "iso": "ETH-TRX",
+    "name": "TRON",
+    "precision": 6,
+    "value": 0.00002319,
+    "change": -4.84,
+    "spread": 0.69,
+    "supply": 100850743811.66246
+  },
+  {
+    "iso": "ETH-ETC",
+    "name": "Ethereum Classic",
+    "precision": 6,
+    "value": 0.005524,
+    "change": -0.72,
+    "spread": 0.75,
+    "supply": 116313299
+  },
+  {
+    "iso": "ETH-XRP",
+    "name": "XRP",
+    "precision": 6,
+    "value": 0.00028919,
+    "change": 37.64,
+    "spread": 0.8,
+    "supply": 99990831162
+  },
+  {
+    "iso": "ETH-OMG",
+    "name": "OmiseGO",
+    "precision": 8,
+    "value": 0.002543,
+    "change": 1.88,
+    "spread": 0.55,
+    "supply": 140245398.24513277
+  },
+  {
+    "iso": "ETH-ZEC",
+    "name": "Zcash",
+    "precision": 8,
+    "value": 0.0614,
+    "change": -2.03,
+    "spread": 0.66,
+    "supply": 11023662.5
+  },
+  {
+    "iso": "ETH-ADA",
+    "name": "Cardano",
+    "precision": 8,
+    "value": 0.00026637,
+    "change": 4.63,
+    "spread": 0.49,
+    "supply": 45000000000
+  },
+  {
+    "iso": "ETH-XMR",
+    "name": "Monero",
+    "precision": 8,
+    "value": 0.10153,
+    "change": -0.54,
+    "spread": 0.77,
+    "supply": 17826786.2559741
+  },
+  {
+    "iso": "ETH-NEO",
+    "name": "NEO",
+    "precision": 8,
+    "value": 0.01642499,
+    "change": -0.77,
+    "spread": 0.66,
+    "supply": 100000000
+  },
+  {
+    "iso": "ETH-EOS",
+    "name": "EOS",
+    "precision": 8,
+    "value": 0.002121,
+    "change": 6.48,
+    "spread": 0.45,
+    "supply": 1026619312.144
+  },
+  {
+    "iso": "ETH-IOTA",
+    "name": "MIOTA",
+    "precision": 8,
+    "value": 0.00031283,
+    "change": 6.35,
+    "spread": 1.11,
+    "supply": 2779530283
+  },
+  {
+    "iso": "ETH-XLM",
+    "name": "Stellar",
+    "precision": 8,
+    "value": 0.00022911,
+    "change": 6.07,
+    "spread": 0.45,
+    "supply": 50001803528.87172
+  },
+  {
+    "iso": "ETH-DASH",
+    "name": "Dash",
+    "precision": 8,
+    "value": 0.0762,
+    "change": 0.13,
+    "spread": 0.92,
+    "supply": 9950195.05347106
+  },
+  {
+    "iso": "ETH-LINK",
+    "name": "Chainlink",
+    "precision": 8,
+    "value": 0.017193,
+    "change": 2.95,
+    "spread": 0.53,
+    "supply": 1000000000
+  },
+  {
+    "iso": "ETH-ZIL",
+    "name": "Zilliqa",
+    "precision": 8,
+    "value": 0.00005398,
+    "change": 10.48,
+    "spread": 0.63,
+    "supply": 0
+  }
+]

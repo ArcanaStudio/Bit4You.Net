@@ -1,0 +1,22 @@
+{
+  "sub": 5022,
+  "iss": "https://auth.bit4you.io/",
+  "aud": "MZQgZOTvTljujbSLHkYcZTiN66odxQr2",
+  "iat": 1612041960,
+  "auth_time": 1612041960,
+  "verified": true,
+  "name": "Olivier Jean-Marie P Matis",
+  "family_name": "Matis",
+  "given_name": "Olivier Jean-Marie P",
+  "middle_name": "",
+  "gender": "male",
+  "birthdate": "1975-04-05",
+  "birthplace": " - Uccle",
+  "zoneinfo": "Europe/Paris",
+  "locale": "fr-FR",
+  "currency": "EUR",
+  "updated_at": "2020-09-26T12:49:11.000Z",
+  "id_number": "",
+  "id_expiration": null,
+  "nationality": "Belge"
+}

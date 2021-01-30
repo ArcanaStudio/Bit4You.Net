@@ -1,0 +1,4 @@
+{
+  "status": "NO_ORDER_OR_ALREADY_CANCELED",
+  "message": "Order not found or already closed"
+}

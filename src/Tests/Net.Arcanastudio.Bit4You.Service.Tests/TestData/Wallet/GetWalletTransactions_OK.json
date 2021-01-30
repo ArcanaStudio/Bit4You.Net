@@ -1,0 +1,70 @@
+{
+  "balance": 2.18076722,
+  "pages": 1,
+  "txs": [
+    {
+      "txid": "d7c94a487c412ede1c2aec66f61e492cbd119b74",
+      "block": null,
+      "confirmations": null,
+      "fee": 0,
+      "time": 1606934473,
+      "quantity": 0.12644619,
+      "type": "order",
+      "meta": {
+        "pending": false,
+        "paid_value": -2406.67362439,
+        "paid_asset": "USDT",
+        "fee_asset": "USDT",
+        "market": "BTC"
+      }
+    },
+    {
+      "txid": "f40a7be62ba677df68b5e22df63d7a250a2d7328",
+      "block": null,
+      "confirmations": null,
+      "fee": 0,
+      "time": 1604775162,
+      "quantity": -0.17939693,
+      "type": "order",
+      "meta": {
+        "pending": false,
+        "paid_value": 2683.98271491,
+        "paid_asset": "USDT",
+        "fee_asset": "USDT",
+        "market": "BTC"
+      }
+    },
+    {
+      "txid": "73b72c5f8b5241f6421153f44cdf0098aee9626e",
+      "block": null,
+      "confirmations": null,
+      "fee": 0,
+      "time": 1603711312,
+      "quantity": 0.17939693,
+      "type": "order",
+      "meta": {
+        "pending": false,
+        "paid_value": -2363.63593388,
+        "paid_asset": "USDT",
+        "fee_asset": "USDT",
+        "market": "BTC"
+      }
+    },
+    {
+      "txid": "8f0a28f1eecf94b102a2f959264ae6ee1a88eb9c",
+      "block": null,
+      "confirmations": null,
+      "fee": 0,
+      "time": 1602601885,
+      "quantity": 2.05432103,
+      "type": "order",
+      "meta": {
+        "pending": false,
+        "paid_value": -23394.86921024,
+        "paid_asset": "USDT",
+        "fee_asset": "USDT",
+        "market": "BTC"
+      }
+    }
+  ]
+}

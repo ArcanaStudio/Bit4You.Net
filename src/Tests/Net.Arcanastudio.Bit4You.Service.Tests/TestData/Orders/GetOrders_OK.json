@@ -1,0 +1,242 @@
+[
+  {
+    "txid": "d2df89efcf7dff6ef250bc4a31a63ff6ea7ab174",
+    "type": "sell",
+    "market": "USDT-ZIL",
+    "isOpen": false,
+    "requested_rate": null,
+    "quantity": 18101.9513837,
+    "base_quantity": 1197.51685387,
+    "blocked_quantity": 0,
+    "remaining": {
+      "quantity": 0,
+      "iso": "USDT"
+    },
+    "fee": {
+      "quantity": 0,
+      "iso": "USDT"
+    },
+    "position": {
+      "id": 28634,
+      "history_id": null
+    },
+    "open_time": 1611736855,
+    "update_time": 1611736855
+  },
+  {
+    "txid": "59dac410cfafaa857f4c9cc4c845023f00aaf4f0",
+    "type": "buy",
+    "market": "USDT-ZIL",
+    "isOpen": false,
+    "requested_rate": null,
+    "quantity": 18101.9513837,
+    "base_quantity": 1215.67836068,
+    "blocked_quantity": 0,
+    "remaining": {
+      "quantity": 0,
+      "iso": "USDT"
+    },
+    "fee": {
+      "quantity": 0,
+      "iso": "USDT"
+    },
+    "position": {
+      "id": 28634,
+      "history_id": null
+    },
+    "open_time": 1611736391,
+    "update_time": 1611736391
+  },
+  {
+    "txid": "d9df5036731d0732bffbcc4e8cf947a3228f1c62",
+    "type": "sell",
+    "market": "USDT-ZIL",
+    "isOpen": false,
+    "requested_rate": null,
+    "quantity": 13.64292961,
+    "base_quantity": 0.97539661,
+    "blocked_quantity": 0,
+    "remaining": {
+      "quantity": 0,
+      "iso": "USDT"
+    },
+    "fee": {
+      "quantity": 0,
+      "iso": "USDT"
+    },
+    "position": {
+      "id": 24467,
+      "history_id": null
+    },
+    "open_time": 1609693664,
+    "update_time": 1609693667
+  },
+  {
+    "txid": "0d0512661ef0888684b5d9e5dd1c8fd467a2aeba",
+    "type": "buy",
+    "market": "USDT-ZIL",
+    "isOpen": false,
+    "requested_rate": 0.00001,
+    "quantity": 0,
+    "base_quantity": 0,
+    "blocked_quantity": 0,
+    "remaining": {
+      "quantity": 0,
+      "iso": "USDT"
+    },
+    "fee": {
+      "quantity": 0,
+      "iso": "USDT"
+    },
+    "position": {
+      "id": null,
+      "history_id": null
+    },
+    "open_time": 1609693477,
+    "update_time": 1609693583
+  },
+  {
+    "txid": "8a3b32eb55620e97a76bcfb2fa4604022ae229b5",
+    "type": "buy",
+    "market": "USDT-ZIL",
+    "isOpen": true,
+    "requested_rate": 0.00001,
+    "quantity": 0,
+    "base_quantity": 0,
+    "blocked_quantity": 25,
+    "remaining": {
+      "quantity": 25,
+      "iso": "USDT"
+    },
+    "fee": {
+      "quantity": 0,
+      "iso": "USDT"
+    },
+    "position": {
+      "id": null,
+      "history_id": null
+    },
+    "open_time": 1609693473,
+    "update_time": 1609693473
+  },
+  {
+    "txid": "88888324d5d46faa144af049ac3c4862e89fc8cf",
+    "type": "buy",
+    "market": "USDT-ZIL",
+    "isOpen": true,
+    "requested_rate": 0.00001,
+    "quantity": 0,
+    "base_quantity": 0,
+    "blocked_quantity": 25,
+    "remaining": {
+      "quantity": 25,
+      "iso": "USDT"
+    },
+    "fee": {
+      "quantity": 0,
+      "iso": "USDT"
+    },
+    "position": {
+      "id": null,
+      "history_id": null
+    },
+    "open_time": 1609693466,
+    "update_time": 1609693466
+  },
+  {
+    "txid": "a290d2ff4245a668f8af95864968172a53bce876",
+    "type": "buy",
+    "market": "USDT-ZIL",
+    "isOpen": true,
+    "requested_rate": 0.00001,
+    "quantity": 0,
+    "base_quantity": 0,
+    "blocked_quantity": 25,
+    "remaining": {
+      "quantity": 25,
+      "iso": "USDT"
+    },
+    "fee": {
+      "quantity": 0,
+      "iso": "USDT"
+    },
+    "position": {
+      "id": null,
+      "history_id": null
+    },
+    "open_time": 1609693423,
+    "update_time": 1609693423
+  },
+  {
+    "txid": "8f556f25e254332570e96e70cbf0b80d29f0428f",
+    "type": "buy",
+    "market": "USDT-ZIL",
+    "isOpen": false,
+    "requested_rate": 0.00001,
+    "quantity": 0,
+    "base_quantity": 0,
+    "blocked_quantity": 0,
+    "remaining": {
+      "quantity": 0,
+      "iso": "USDT"
+    },
+    "fee": {
+      "quantity": 0,
+      "iso": "USDT"
+    },
+    "position": {
+      "id": null,
+      "history_id": null
+    },
+    "open_time": 1609693125,
+    "update_time": 1609693135
+  },
+  {
+    "txid": "eac0257a1bd3096983ecba11cb367c55c1ca7dc5",
+    "type": "buy",
+    "market": "USDT-ZIL",
+    "isOpen": false,
+    "requested_rate": null,
+    "quantity": 13.64292961,
+    "base_quantity": 1,
+    "blocked_quantity": 0,
+    "remaining": {
+      "quantity": 0,
+      "iso": "USDT"
+    },
+    "fee": {
+      "quantity": 0,
+      "iso": "USDT"
+    },
+    "position": {
+      "id": 24467,
+      "history_id": null
+    },
+    "open_time": 1609692792,
+    "update_time": 1609692794
+  },
+  {
+    "txid": "551c99c1999109168ca09c3b101fc3bb7b00ea7a",
+    "type": "buy",
+    "market": "USDT-ZIL",
+    "isOpen": false,
+    "requested_rate": null,
+    "quantity": 14633.13521346,
+    "base_quantity": 1228.84240588,
+    "blocked_quantity": 0,
+    "remaining": {
+      "quantity": 0,
+      "iso": "USDT"
+    },
+    "fee": {
+      "quantity": 0,
+      "iso": "USDT"
+    },
+    "position": {
+      "id": 24043,
+      "history_id": null
+    },
+    "open_time": 1609437232,
+    "update_time": 1609437232
+  }
+]

@@ -1,0 +1,24 @@
+{
+  "txid": "4bb635f53a8532a08a7fdadc8ff2369837698d57",
+  "type": "buy",
+  "market": "USDT-BTC",
+  "isOpen": false,
+  "requested_rate": 18014.68499087,
+  "quantity": 0,
+  "base_quantity": 0,
+  "blocked_quantity": 0,
+  "remaining": {
+    "quantity": 0,
+    "iso": "USDT"
+  },
+  "fee": {
+    "quantity": 0,
+    "iso": "USDT"
+  },
+  "position": {
+    "id": null,
+    "history_id": null
+  },
+  "open_time": 1607609884,
+  "update_time": 1607612213
+}
