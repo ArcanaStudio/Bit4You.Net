@@ -1,175 +1,177 @@
-[
-  {
-    "iso": "USDT",
-    "name": "Tether USDT",
-    "tx": "01",
-    "tx_enabled": true,
-    "erc20": true,
-    "balance": 56931.09866529
-  },
-  {
-    "iso": "BTC",
-    "name": "Bitcoin",
-    "tx_explorer": "https://live.blockcypher.com/btc/tx/:txid/",
-    "tx": "02",
-    "tx_enabled": true,
-    "balance": 2.18076722
-  },
-  {
-    "iso": "BCH",
-    "name": "Bitcoin Cash",
-    "tx_explorer": "https://www.blockchain.com/bch/tx/:txid",
-    "tx": "03",
-    "tx_enabled": true,
-    "balance": 0
-  },
-  {
-    "iso": "XRP",
-    "name": "XRP",
-    "tx_explorer": "https://xrpcharts.ripple.com/#/transactions/:txid",
-    "tx": "04",
-    "tx_enabled": true,
-    "balance": 55115.24258242
-  },
-  {
-    "iso": "LTC",
-    "name": "Litecoin",
-    "tx_explorer": "https://live.blockcypher.com/ltc/tx/:txid/",
-    "tx": "05",
-    "tx_enabled": true,
-    "balance": 0
-  },
-  {
-    "iso": "ZEC",
-    "name": "Zcash",
-    "tx": "06",
-    "balance": 0
-  },
-  {
-    "iso": "DASH",
-    "name": "Dash",
-    "tx_explorer": "https://live.blockcypher.com/dash/tx/:txid/",
-    "tx": "07",
-    "balance": 0
-  },
-  {
-    "iso": "ETH",
-    "name": "Ethereum",
-    "tx_explorer": "https://etherscan.io/tx/:txid",
-    "digits": 18,
-    "tx": "08",
-    "tx_enabled": true,
-    "balance": 0
-  },
-  {
-    "iso": "ETC",
-    "name": "Ethereum Classic",
-    "tx_explorer": "https://blockscout.com/etc/mainnet/tx/:txid",
-    "digits": 18,
-    "tx": "09",
-    "tx_enabled": true,
-    "balance": 0
-  },
-  {
-    "iso": "TRX",
-    "name": "Tron",
-    "digits": 6,
-    "tx": "10",
-    "balance": 0
-  },
-  {
-    "iso": "OMG",
-    "name": "OmiseGO",
-    "digits": 18,
-    "tx": "11",
-    "tx_enabled": true,
-    "erc20": true,
-    "balance": 0
-  },
-  {
-    "iso": "ADA",
-    "name": "Cardano",
-    "tx": "12",
-    "balance": 0
-  },
-  {
-    "iso": "XMR",
-    "name": "Monero",
-    "tx": "13",
-    "balance": 0
-  },
-  {
-    "iso": "NEO",
-    "name": "NEO",
-    "tx": "14",
-    "balance": 0
-  },
-  {
-    "iso": "EOS",
-    "name": "EOS",
-    "tx": "15",
-    "balance": 0
-  },
-  {
-    "iso": "IOTA",
-    "name": "MIOTA",
-    "tx": "16",
-    "balance": 0
-  },
-  {
-    "iso": "XLM",
-    "name": "Stellar",
-    "tx": "17",
-    "balance": 0
-  },
-  {
-    "iso": "BCHSV",
-    "name": "Bitcoin Cash SV",
-    "tx": "18",
-    "balance": 0
-  },
-  {
-    "iso": "DAN",
-    "name": "Daneel",
-    "tx": "19",
-    "tx_enabled": true,
-    "erc20": true,
-    "balance": 0
-  },
-  {
-    "iso": "DTX",
-    "name": "Databroker",
-    "tx": "20",
-    "tx_enabled": true,
-    "erc20": true,
-    "balance": 0
-  },
-  {
-    "iso": "LINK",
-    "name": "Chainlink",
-    "tx": "21",
-    "tx_enabled": true,
-    "erc20": true,
-    "balance": 0
-  },
-  {
-    "iso": "BTT",
-    "name": "BitTorrent",
-    "tx": "22",
-    "balance": 0
-  },
-  {
-    "iso": "ZIL",
-    "name": "Zilliqa",
-    "tx": "23",
-    "tx_enabled": true,
-    "tx_explorer": "https://viewblock.io/zilliqa/tx/:txid",
-    "balance": 14633.13521346
-  },
-  {
-    "iso": "XTZ",
-    "name": "Tezos",
-    "tx": "24",
-    "balance": 0
-  }
-]
+{
+  "returncode": 200,
+  "content": [
+    {
+      "iso": "USDT",
+      "name": "Tether USDT",
+      "tx": "01",
+      "tx_enabled": true,
+      "erc20": true,
+      "balance": 56931.09866529
+    },
+    {
+      "iso": "BTC",
+      "name": "Bitcoin",
+      "tx_explorer": "https://live.blockcypher.com/btc/tx/:txid/",
+      "tx": "02",
+      "tx_enabled": true,
+      "balance": 2.18076722
+    },
+    {
+      "iso": "BCH",
+      "name": "Bitcoin Cash",
+      "tx_explorer": "https://www.blockchain.com/bch/tx/:txid",
+      "tx": "03",
+      "tx_enabled": true,
+      "balance": 0
+    },
+    {
+      "iso": "XRP",
+      "name": "XRP",
+      "tx_explorer": "https://xrpcharts.ripple.com/#/transactions/:txid",
+      "tx": "04",
+      "tx_enabled": true,
+      "balance": 55115.24258242
+    },
+    {
+      "iso": "LTC",
+      "name": "Litecoin",
+      "tx_explorer": "https://live.blockcypher.com/ltc/tx/:txid/",
+      "tx": "05",
+      "tx_enabled": true,
+      "balance": 0
+    },
+    {
+      "iso": "ZEC",
+      "name": "Zcash",
+      "tx": "06",
+      "balance": 0
+    },
+    {
+      "iso": "DASH",
+      "name": "Dash",
+      "tx_explorer": "https://live.blockcypher.com/dash/tx/:txid/",
+      "tx": "07",
+      "balance": 0
+    },
+    {
+      "iso": "ETH",
+      "name": "Ethereum",
+      "tx_explorer": "https://etherscan.io/tx/:txid",
+      "digits": 18,
+      "tx": "08",
+      "tx_enabled": true,
+      "balance": 0
+    },
+    {
+      "iso": "ETC",
+      "name": "Ethereum Classic",
+      "tx_explorer": "https://blockscout.com/etc/mainnet/tx/:txid",
+      "digits": 18,
+      "tx": "09",
+      "tx_enabled": true,
+      "balance": 0
+    },
+    {
+      "iso": "TRX",
+      "name": "Tron",
+      "digits": 6,
+      "tx": "10",
+      "balance": 0
+    },
+    {
+      "iso": "OMG",
+      "name": "OmiseGO",
+      "digits": 18,
+      "tx": "11",
+      "tx_enabled": true,
+      "erc20": true,
+      "balance": 0
+    },
+    {
+      "iso": "ADA",
+      "name": "Cardano",
+      "tx": "12",
+      "balance": 0
+    },
+    {
+      "iso": "XMR",
+      "name": "Monero",
+      "tx": "13",
+      "balance": 0
+    },
+    {
+      "iso": "NEO",
+      "name": "NEO",
+      "tx": "14",
+      "balance": 0
+    },
+    {
+      "iso": "EOS",
+      "name": "EOS",
+      "tx": "15",
+      "balance": 0
+    },
+    {
+      "iso": "IOTA",
+      "name": "MIOTA",
+      "tx": "16",
+      "balance": 0
+    },
+    {
+      "iso": "XLM",
+      "name": "Stellar",
+      "tx": "17",
+      "balance": 0
+    },
+    {
+      "iso": "BCHSV",
+      "name": "Bitcoin Cash SV",
+      "tx": "18",
+      "balance": 0
+    },
+    {
+      "iso": "DAN",
+      "name": "Daneel",
+      "tx": "19",
+      "tx_enabled": true,
+      "erc20": true,
+      "balance": 0
+    },
+    {
+      "iso": "DTX",
+      "name": "Databroker",
+      "tx": "20",
+      "tx_enabled": true,
+      "erc20": true,
+      "balance": 0
+    },
+    {
+      "iso": "LINK",
+      "name": "Chainlink",
+      "tx": "21",
+      "tx_enabled": true,
+      "erc20": true,
+      "balance": 0
+    },
+    {
+      "iso": "BTT",
+      "name": "BitTorrent",
+      "tx": "22",
+      "balance": 0
+    },
+    {
+      "iso": "ZIL",
+      "name": "Zilliqa",
+      "tx": "23",
+      "tx_enabled": true,
+      "tx_explorer": "https://viewblock.io/zilliqa/tx/:txid",
+      "balance": 14633.13521346
+    },
+    {
+      "iso": "XTZ",
+      "name": "Tezos",
+      "tx": "24",
+      "balance": 0
+    }
+  ]

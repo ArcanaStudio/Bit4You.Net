@@ -1,8 +1,16 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Net.Arcanastudio.Bit4You.Response
 {
-    internal class MarketHistoryResponse
+    internal class GetMarketSummariesResponse : BaseListResponse<MarketHistoryResponseItem>
+    {
+        public GetMarketSummariesResponse(List<MarketHistoryResponseItem> items) : base(items)
+        {
+        }
+    }
+
+    internal class MarketHistoryResponseItem
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }

@@ -8,6 +8,8 @@ namespace Net.Arcanastudio.Bit4You.Response
         public string Iso { get; set; }
         [JsonPropertyName("name")]
         public string Name { get; set; }
+        [JsonPropertyName("tx_enabled")]
+        public bool Tx_Enabled{ get; set; }
         [JsonPropertyName("tx_explorer")]
         public string Tx_explorer { get; set; }
         [JsonPropertyName("tx")]
@@ -16,7 +18,7 @@ namespace Net.Arcanastudio.Bit4You.Response
         public string Erc20 { get; set; }
         [JsonPropertyName("balance")]
         public int Balance { get; set; }
-        [JsonPropertyName("Adress")]
-        public string Adress { get; set; }
+        [JsonPropertyName("digits")]
+        public int Digits { get; set; }
     }
 }

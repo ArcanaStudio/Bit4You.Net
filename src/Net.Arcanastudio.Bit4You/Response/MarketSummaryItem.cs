@@ -2,12 +2,12 @@
 
 namespace Net.Arcanastudio.Bit4You.Response
 {
-    internal class MarketSummaryResponse
+    internal class MarketSummaryItem
     {
         [JsonPropertyName("market")]
         public string Market { get; set; }
         [JsonPropertyName("marketCap")]
-        public long MarketCap { get; set; }
+        public float MarketCap { get; set; }
         [JsonPropertyName("high")]
         public float High { get; set; }
         [JsonPropertyName("low")]

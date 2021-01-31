@@ -1,3 +1,6 @@
 {
-  "error": "Access denied to the requested api (wallet/transactions)"
+  "returncode": 200,
+  "content": {
+    "error": "Access denied to the requested api (wallet/transactions)"
+  }
 }

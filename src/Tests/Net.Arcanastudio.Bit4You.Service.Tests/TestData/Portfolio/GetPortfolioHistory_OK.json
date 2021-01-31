@@ -1,46 +1,50 @@
-[
-  {
-    "id": 44460,
-    "market": "ZIL",
-    "baseCurrency": "USDT",
-    "invested": 1215.67836068,
-    "closed_amount": 1197.51685387,
-    "quantity": 18101.9513837,
-    "fee": 0,
-    "open_time": 1611736391,
-    "close_time": 1611736855
-  },
-  {
-    "id": 41263,
-    "market": "ZIL",
-    "baseCurrency": "USDT",
-    "invested": 1,
-    "closed_amount": 0.97539661,
-    "quantity": 13.64292961,
-    "fee": 0,
-    "open_time": 1609692792,
-    "close_time": 1609693664
-  },
-  {
-    "id": 34579,
-    "market": "BTC",
-    "baseCurrency": "USDT",
-    "invested": 2363.63593388,
-    "closed_amount": 2683.98271491,
-    "quantity": 0.17939693,
-    "fee": 0,
-    "open_time": 1603711312,
-    "close_time": 1604775162
-  },
-  {
-    "id": 34566,
-    "market": "ETH",
-    "baseCurrency": "USDT",
-    "invested": 11771.87552329,
-    "closed_amount": 12054.13645698,
-    "quantity": 27.12839599,
-    "fee": 0,
-    "open_time": 1604651481,
-    "close_time": 1604762052
-  }
-]
+{
+  "returncode": 200,
+  "content":
+  [
+    {
+      "id": 44460,
+      "market": "ZIL",
+      "baseCurrency": "USDT",
+      "invested": 1215.67836068,
+      "closed_amount": 1197.51685387,
+      "quantity": 18101.9513837,
+      "fee": 0,
+      "open_time": 1611736391,
+      "close_time": 1611736855
+    },
+    {
+      "id": 41263,
+      "market": "ZIL",
+      "baseCurrency": "USDT",
+      "invested": 1,
+      "closed_amount": 0.97539661,
+      "quantity": 13.64292961,
+      "fee": 0,
+      "open_time": 1609692792,
+      "close_time": 1609693664
+    },
+    {
+      "id": 34579,
+      "market": "BTC",
+      "baseCurrency": "USDT",
+      "invested": 2363.63593388,
+      "closed_amount": 2683.98271491,
+      "quantity": 0.17939693,
+      "fee": 0,
+      "open_time": 1603711312,
+      "close_time": 1604775162
+    },
+    {
+      "id": 34566,
+      "market": "ETH",
+      "baseCurrency": "USDT",
+      "invested": 11771.87552329,
+      "closed_amount": 12054.13645698,
+      "quantity": 27.12839599,
+      "fee": 0,
+      "open_time": 1604651481,
+      "close_time": 1604762052
+    }
+  ]
+}

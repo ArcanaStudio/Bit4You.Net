@@ -2,7 +2,7 @@
 
 namespace Net.Arcanastudio.Bit4You.Response
 {
-    internal class WalletTransactionsResponse
+    internal class WalletTransactionsItem
     {
         [JsonPropertyName("balance")]
         public float Balance { get; set; }

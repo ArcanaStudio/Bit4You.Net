@@ -5,6 +5,7 @@ using System.Net.Http.Headers;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Net.Arcanastudio.Bit4You.Extensions;
+using Net.Arcanastudio.Bit4You.Model.Exceptions;
 using Net.Arcanastudio.Bit4You.Payload;
 using Net.Arcanastudio.Bit4You.Response;
 
@@ -22,118 +23,135 @@ namespace Net.Arcanastudio.Bit4You.Service
             _httpClient = httpservice.Create();
         }
 
-        public async Task<ServiceResponse<TokenResponse>> GetToken(TokenPayload payload)
+        public async Task<TokenResponse> GetToken(TokenPayload payload)
         {
             var response = await SendPostRequest<TokenResponse>(Constants.Apis.GetToken, payload).ConfigureAwait(false);
-            if (!response.IsError)
-                _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", response.Data.Token);
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", response.Token);
 
             return response;
         }
 
-        public async Task<ServiceResponse<GetUserInfoResponse>> GetUserInfo()
+        public async Task<GetUserInfoResponse> GetUserInfo()
         {
             return await SendGetRequest<GetUserInfoResponse>(Constants.Apis.GetUserInfo).ConfigureAwait(false);
         }
 
-        public async Task<ServiceResponse<List<MarketResponse>>> GetMarketList()
+        public async Task<GetMarketListResponse> GetMarketList()
         {
-            return await SendGetRequest<List<MarketResponse>>(Constants.Apis.GetMarketList).ConfigureAwait(false);
+            var list = await SendGetRequest<List<MarketResponseItem>>(Constants.Apis.GetMarketList).ConfigureAwait(false);
+
+            return new GetMarketListResponse(list);
         }
 
-        public async Task<ServiceResponse<List<MarketSummaryResponse>>> GetMarketSummaries()
+        public async Task<GetMarketSummariesResponse> GetMarketSummaries()
         {
-            return await SendGetRequest<List<MarketSummaryResponse>>(Constants.Apis.GetMarketSummaries).ConfigureAwait(false);
+            var list = await SendGetRequest<List<MarketHistoryResponseItem>>(Constants.Apis.GetMarketSummaries).ConfigureAwait(false);
+
+            return new GetMarketSummariesResponse(list);
         }
 
-        public async Task<ServiceResponse<List<MarketSummaryResponse>>> GetMarketTicks(MarketTicksPayload payload)
+        public async Task<GetMarketTicksResponse> GetMarketTicks(MarketTicksPayload payload)
         {
-            return await SendPostRequest<List<MarketSummaryResponse>>(Constants.Apis.GetMarketTicks, payload).ConfigureAwait(false);
+            var list = await SendPostRequest<List<MarketTickItem>>(Constants.Apis.GetMarketTicks, payload).ConfigureAwait(false);
+
+            return new GetMarketTicksResponse(list);
         }
 
-        public async Task<ServiceResponse<List<MarketSummaryResponse>>> GetMarketOrderBook(MarketOrderbookPayload payload)
+        public async Task<GetMarketOrderBookResponse> GetMarketOrderBook(MarketOrderbookPayload payload)
         {
-            return await SendPostRequest<List<MarketSummaryResponse>>(Constants.Apis.GetMarketOrderbooks, payload).ConfigureAwait(false);
+            var list = await SendPostRequest<List<MarketOrderBookItem>>(Constants.Apis.GetMarketOrderbooks, payload).ConfigureAwait(false);
+
+            return new GetMarketOrderBookResponse(list);
         }
 
-        public async Task<ServiceResponse<List<MarketHistoryResponse>>> GetMarketHistory(MarketHistoryPayload payload)
+        public async Task<GetMarketHistoryResponse> GetMarketHistory(MarketHistoryPayload payload)
         {
-            return await SendPostRequest<List<MarketHistoryResponse>>(Constants.Apis.GetMarketHistory, payload).ConfigureAwait(false);
+            var list = await SendPostRequest<List<MarketHistoryItem>>(Constants.Apis.GetMarketHistory, payload).ConfigureAwait(false);
+
+            return new GetMarketHistoryResponse(list);
         }
 
-        public async Task<ServiceResponse<List<WalletsBalancesResponse>>> GetWalletsBalance(WalletsBalancesPayload payload)
+        public async Task<GetWalletsBalanceResponse> GetWalletsBalance(WalletsBalancesPayload payload)
         {
-            return await SendPostRequest<List<WalletsBalancesResponse>>(Constants.Apis.GetWalletsBalance, payload).ConfigureAwait(false);
+            var list = await SendPostRequest<List<WalletsBalanceItem>>(Constants.Apis.GetWalletsBalance, payload).ConfigureAwait(false);
+
+            return new GetWalletsBalanceResponse(list);
         }
 
-        public async Task<ServiceResponse<List<WalletTransactionsResponse>>> GetWalletTransactions(WalletTransactionsPayload payload)
+        public async Task<GetWalletTransactionsResponse> GetWalletTransactions(WalletTransactionsPayload payload)
         {
-            return await SendPostRequest<List<WalletTransactionsResponse>>(Constants.Apis.GetWalletTransactions, payload).ConfigureAwait(false);
+            var list = await SendPostRequest<List<WalletTransactionsItem>>(Constants.Apis.GetWalletTransactions, payload).ConfigureAwait(false);
+
+            return new GetWalletTransactionsResponse(list);
         }
 
-        public async Task<ServiceResponse<List<WalletTransactionsResponse>>> WalletWithdrawFunds(WalletWithdrawFundsPayload payload)
+        public async Task<WalletWithdrawFundsResponse> WalletWithdrawFunds(WalletWithdrawFundsPayload payload)
         {
-            return await SendPostRequest<List<WalletTransactionsResponse>>(Constants.Apis.WalletWithdrawFunds, payload).ConfigureAwait(false);
+            return await SendPostRequest<WalletWithdrawFundsResponse>(Constants.Apis.WalletWithdrawFunds, payload).ConfigureAwait(false);
         }
 
-        public async Task<ServiceResponse<List<OrderInfoResponse>>> GetOrdersList(OrdersListPayload payload)
+        public async Task<GetOrdersListResponse> GetOrdersList(OrdersListPayload payload)
         {
-            return await SendPostRequest<List<OrderInfoResponse>>(Constants.Apis.GetOrdersList, payload).ConfigureAwait(false);
+            var list = await SendPostRequest<List<OrderItem>>(Constants.Apis.GetOrdersList, payload).ConfigureAwait(false);
+
+            return new GetOrdersListResponse(list);
         }
 
-        public async Task<ServiceResponse<OrderInfoResponse>> GetOrderInfo(OrderInfoPayload payload)
+        public async Task<OrderItem> GetOrderInfo(OrderInfoPayload payload)
         {
-            return await SendPostRequest<OrderInfoResponse>(Constants.Apis.GetOrderInfo, payload).ConfigureAwait(false);
+            return await SendPostRequest<OrderItem>(Constants.Apis.GetOrderInfo, payload).ConfigureAwait(false);
         }
 
-        public async Task<ServiceResponse<List<OrderInfoResponse>>> GetOrdersPending(OrderInfoPayload payload)
+        public async Task<GetOrdersPendingResponse> GetOrdersPending(OrderInfoPayload payload)
         {
-            return await SendPostRequest<List<OrderInfoResponse>>(Constants.Apis.GetOrderPendingsList, payload).ConfigureAwait(false);
+            var list = await SendPostRequest<List<OrdersPendingItem>>(Constants.Apis.GetOrderPendingsList, payload).ConfigureAwait(false);
+
+            return new GetOrdersPendingResponse(list);
         }
 
-        public async Task<ServiceResponse<OrderInfoResponse>> CreateOrder(CreateOrderPayload payload)
+        public async Task<OrderItem> CreateOrder(CreateOrderPayload payload)
         {
-            return await SendPostRequest<OrderInfoResponse>(Constants.Apis.CreateOrder, payload).ConfigureAwait(false);
+            return await SendPostRequest<OrderItem>(Constants.Apis.CreateOrder, payload).ConfigureAwait(false);
         }
 
-        public async Task<ServiceResponse<CancelOrderResponse>> CancelOrder(CancelOrderPayload payload)
+        public async Task<CancelOrderResponse> CancelOrder(CancelOrderPayload payload)
         {
             return await SendPostRequest<CancelOrderResponse>(Constants.Apis.CancelOrder, payload).ConfigureAwait(false);
         }
 
-        public async Task<ServiceResponse<PorfolioListResponse>> GetPortfolioList(PortfolioListPayload payload)
+        public async Task<PorfolioListResponse> GetPortfolioList(PortfolioListPayload payload)
         {
             return await SendPostRequest<PorfolioListResponse>(Constants.Apis.GetPortfolioList, payload).ConfigureAwait(false);
         }
 
-        public async Task<ServiceResponse<PortfolioOpenOrdersResponse>> GetPortfolioOpenOrderList(PortfolioOpenOrdersPayload payload)
+        public async Task<PortfolioOpenOrdersResponse> GetPortfolioOpenOrderList(PortfolioOpenOrdersPayload payload)
         {
             return await SendPostRequest<PortfolioOpenOrdersResponse>(Constants.Apis.GetPortfolioOpenOrderList, payload).ConfigureAwait(false);
         }
 
-        public async Task<ServiceResponse<GetPortfolioHistoryListResponse>> GetPortfolioHistoryList(PortfolioHistoryListPayload payload)
+        public async Task<GetPortfolioHistoryListResponse> GetPortfolioHistoryList(PortfolioHistoryListPayload payload)
         {
             return await SendPostRequest<GetPortfolioHistoryListResponse>(Constants.Apis.GetPortfolioHistoryList, payload).ConfigureAwait(false);
         }
 
-        public async Task<ServiceResponse<CreatePortfolioOrderResponse>> CreatePortfolioOrder(CreatePortfolioOrderPayload payload)
+        public async Task<CreatePortfolioOrderResponse> CreatePortfolioOrder(CreatePortfolioOrderPayload payload)
         {
             return await SendPostRequest<CreatePortfolioOrderResponse>(Constants.Apis.CreatePortfolioOrder, payload).ConfigureAwait(false);
         }
 
-        public async Task<ServiceResponse<ClosePortfolioOrderResponse>> ClosePortfolioOrder(ClosePortfolioOrderPayload payload)
+        public async Task<ClosePortfolioOrderResponse> ClosePortfolioOrder(ClosePortfolioOrderPayload payload)
         {
             return await SendPostRequest<ClosePortfolioOrderResponse>(Constants.Apis.ClosePortfolioOrder, payload).ConfigureAwait(false);
         }
 
-        private async Task<ServiceResponse<T>> SendGetRequest<T>(string url)
+        private async Task<T> SendGetRequest<T>(string url)
         {
             var response = await _httpClient.GetAsync(url).ConfigureAwait(false);
 
             return await TreatResponse<T>(response);
         }
 
-        private async Task<ServiceResponse<T>> SendPostRequest<T>(string url, object payload)
+        private async Task<T> SendPostRequest<T>(string url, object payload)
         {
             var jsonpayload = payload.JsonSerialize();
 
@@ -142,7 +160,7 @@ namespace Net.Arcanastudio.Bit4You.Service
             return await TreatResponse<T>(response);
         }
 
-        private async Task<ServiceResponse<T>> TreatResponse<T>(HttpResponseMessage responsemessage)
+        private async Task<T> TreatResponse<T>(HttpResponseMessage responsemessage)
         {
             var requestresponse = new RequestResponse();
 
@@ -150,18 +168,30 @@ namespace Net.Arcanastudio.Bit4You.Service
             requestresponse.StatusCode = responsemessage.StatusCode;
 
             if (responsemessage.IsSuccessStatusCode)
-                return new ServiceResponse<T>(responsedata.Deserialize<T>());
-            
-            var error = responsedata.Deserialize<RequestError>();
-            return new ServiceResponse<T>(error?.Error ?? string.Empty);
+                return responsedata.Deserialize<T>();
+
+            try
+            {
+                var error = responsedata.Deserialize<RequestError>();
+                throw new Bit4YouException(responsemessage.StatusCode, error.ToErrorInfo());
+            }
+            catch 
+            {
+                throw new Bit4YouException(responsemessage.StatusCode, new Bit4YouException.ErrorInfo{Message = responsedata, Status = "Unknown exception"});
+            }
+          
+
+          
         }
 
-        private class RequestError
+        internal class RequestError
         {
-            [JsonPropertyName("error")]
-            public string Error { get; set; }
+            [JsonPropertyName("status")]
+            public string Status { get; set; }
+            [JsonPropertyName("message")]
+            public string Message { get; set; }
             [JsonPropertyName("reconnect")]
-            public bool Reconnect { get; set; }
+            public bool? Reconnect { get; set; }
         }
     }
 }

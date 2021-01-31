@@ -1,4 +1,7 @@
 {
-  "status": "pending-close",
-  "message": "Order pending closure"
+  "returncode": 200,
+  "content": {
+    "status": "pending-close",
+    "message": "Order pending closure"
+  }
 }

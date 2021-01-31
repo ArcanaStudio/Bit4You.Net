@@ -1,4 +1,7 @@
 {
-  "error": "You need to be connected in order to call this api (wallet/send)",
-  "reconnect": true
+  "returncode": 200,
+  "content": {
+    "error": "You need to be connected in order to call this api (wallet/send)",
+    "reconnect": true
+  }
 }

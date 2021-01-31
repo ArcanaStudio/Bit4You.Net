@@ -2,7 +2,7 @@
 
 namespace Net.Arcanastudio.Bit4You.Response
 {
-    internal class OrderInfoResponse
+    internal class OrderItem
     {
         [JsonPropertyName("txid")]
         public string Id { get; set; }
@@ -19,20 +19,20 @@ namespace Net.Arcanastudio.Bit4You.Response
         [JsonPropertyName("base_quantity")]
         public float BaseQuantity { get; set; }
         [JsonPropertyName("blocked_quantity")]
-        public int BlockedQuantity { get; set; }
+        public float BlockedQuantity { get; set; }
         [JsonPropertyName("remaining")]
-        public RemainingResponse Remaining { get; set; }
+        public Remaining Remaining { get; set; }
         [JsonPropertyName("fee")]
-        public FeeResponse Fee { get; set; }
+        public Fee Fee { get; set; }
         [JsonPropertyName("position")]
-        public PositionResponse Position { get; set; }
+        public Position Position { get; set; }
         [JsonPropertyName("open_time")]
         public int OpenTime { get; set; }
         [JsonPropertyName("update_time")]
         public int UpdateTime { get; set; }
     }
 
-    public class RemainingResponse
+    public class Remaining
     {
         [JsonPropertyName("quantity")]
         public int Quantity { get; set; }
@@ -40,7 +40,7 @@ namespace Net.Arcanastudio.Bit4You.Response
         public string Iso { get; set; }
     }
 
-    public class FeeResponse
+    public class Fee
     {
         [JsonPropertyName("quantity")]
         public int Quantity { get; set; }
@@ -48,7 +48,7 @@ namespace Net.Arcanastudio.Bit4You.Response
         public string Iso { get; set; }
     }
 
-    public class PositionResponse
+    public class Position
     {
         [JsonPropertyName("id")]
         public int? Id { get; set; }

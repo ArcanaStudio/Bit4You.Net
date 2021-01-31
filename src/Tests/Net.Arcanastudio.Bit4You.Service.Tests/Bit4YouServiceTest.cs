@@ -16,7 +16,7 @@ namespace Net.Arcanastudio.Bit4You.Tests
     {
         #region Token
 
-        [TestMethod]
+        [TestMethod, TestCategory("Token")]
         [JsonDataSource(FilePath = "TestData\\Token\\GetToken_OK.json")]
         public async Task GetToken_OK(string jsondatasource)
         {
@@ -28,9 +28,7 @@ namespace Net.Arcanastudio.Bit4You.Tests
 
             var response = await sut.GetToken(new TokenPayload());
 
-            response.IsError.Should().BeFalse();
-            response.Data.Should().NotBeNull();
-            response.Data.Token.Should().Be(fakemessage.Content.Token);
+            response.Token.Should().Be(fakemessage.Content.Token);
         }
 
 
@@ -39,7 +37,7 @@ namespace Net.Arcanastudio.Bit4You.Tests
 
         #region UserInfo
 
-        [TestMethod]
+        [TestMethod, TestCategory("UserInfo")]
         [JsonDataSource(FilePath = "TestData\\UserInfo\\GetUserInfo_OK.json")]
         public async Task GetUserInfo_OK(string jsondatasource)
         {
@@ -51,12 +49,10 @@ namespace Net.Arcanastudio.Bit4You.Tests
 
             var response = await sut.GetUserInfo();
 
-            response.IsError.Should().BeFalse();
-            response.Data.Should().NotBeNull();
-            response.Data.IdNumber.Should().Be(fakemessage.Content.IdNumber);
+            response.IdNumber.Should().Be(fakemessage.Content.IdNumber);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UserInfo")]
         [JsonDataSource(FilePath = "TestData\\Generic\\GenericAccessDenied.json")]
         public async Task GetUserInfo_AccessDenied(string jsondatasource)
         {
@@ -68,12 +64,10 @@ namespace Net.Arcanastudio.Bit4You.Tests
 
             var response = await sut.GetUserInfo();
 
-            response.IsError.Should().BeFalse();
-            response.Data.Should().NotBeNull();
-            response.Data.IdNumber.Should().Be(fakemessage.Content.IdNumber);
+            response.IdNumber.Should().Be(fakemessage.Content.IdNumber);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UserInfo")]
         [JsonDataSource(FilePath = "TestData\\Generic\\GenericError.json")]
         public async Task GetUserInfo_Error(string jsondatasource)
         {
@@ -85,12 +79,10 @@ namespace Net.Arcanastudio.Bit4You.Tests
 
             var response = await sut.GetUserInfo();
 
-            response.IsError.Should().BeFalse();
-            response.Data.Should().NotBeNull();
-            response.Data.IdNumber.Should().Be(fakemessage.Content.IdNumber);
+            response.IdNumber.Should().Be(fakemessage.Content.IdNumber);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UserInfo")]
         [JsonDataSource(FilePath = "TestData\\Generic\\GenericReconnect.json")]
         public async Task GetUserInfo_Reconnect(string jsondatasource)
         {
@@ -102,33 +94,29 @@ namespace Net.Arcanastudio.Bit4You.Tests
 
             var response = await sut.GetUserInfo();
 
-            response.IsError.Should().BeFalse();
-            response.Data.Should().NotBeNull();
-            response.Data.IdNumber.Should().Be(fakemessage.Content.IdNumber);
+            response.IdNumber.Should().Be(fakemessage.Content.IdNumber);
         }
 
         #endregion
 
         #region Wallet
 
-        [TestMethod]
+        [TestMethod, TestCategory("Wallet")]
         [JsonDataSource(FilePath = "TestData\\Wallet\\GetWalletTransactions_OK.json")]
         public async Task GetWalletTransactions_OK(string jsondatasource)
         {
-            var fakemessage = jsondatasource.ToFakeMessage<WalletTransactionsResponse>();
+            var fakemessage = jsondatasource.ToFakeMessage<WalletTransactionsItem>();
 
-            var fakehttpclientfactory = new FakeHttpClientFactory<WalletTransactionsResponse>(new FakeHttpMessageHandler<WalletTransactionsResponse>(fakemessage));
+            var fakehttpclientfactory = new FakeHttpClientFactory<WalletTransactionsItem>(new FakeHttpMessageHandler<WalletTransactionsItem>(fakemessage));
 
             var sut = new Bit4YouService(fakehttpclientfactory);
 
             var response = await sut.GetWalletTransactions(new WalletTransactionsPayload());
 
-            response.IsError.Should().BeFalse();
-            response.Data.Should().NotBeNull();
-            response.Data.Count.Should().Be(fakemessage.Content.Transactions.Length);//todo:change
+            response.Items.Count.Should().Be(fakemessage.Content.Transactions.Length);//todo:change
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("Wallet")]
         [JsonDataSource(FilePath = "TestData\\Wallet\\GetWalletBalances_OK.json")]
         public async Task GetWalletBalances_OK(string jsondatasource)
         {
@@ -140,16 +128,14 @@ namespace Net.Arcanastudio.Bit4You.Tests
 
             var response = await sut.GetWalletsBalance(new WalletsBalancesPayload());
 
-            response.IsError.Should().BeFalse();
-            response.Data.Should().NotBeNull();
-            response.Data.Count.Should().Be(fakemessage.Content.Balance);//todo:change
+            response.Items.Count.Should().Be(fakemessage.Content.Balance);//todo:change
         }
 
         #endregion
 
         #region Orders
 
-        [TestMethod]
+        [TestMethod, TestCategory("Orders")]
         [JsonDataSource(FilePath = "TestData\\Orders\\CancelOrder_OK.json")]
         public async Task CancelOrder_OK(string jsondatasource)
         {
@@ -161,76 +147,66 @@ namespace Net.Arcanastudio.Bit4You.Tests
 
             var response = await sut.CancelOrder(new CancelOrderPayload());
 
-            response.IsError.Should().BeFalse();
-            response.Data.Should().NotBeNull();
             //response.Data.Count.Should().Be(fakemessage.Content.Transactions.Length);//todo:change
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("Orders")]
         [JsonDataSource(FilePath = "TestData\\Orders\\CreateNewOrder_OK.json")]
         public async Task CreateNewOrder_OK(string jsondatasource)
         {
-            var fakemessage = jsondatasource.ToFakeMessage<OrderInfoResponse>();
+            var fakemessage = jsondatasource.ToFakeMessage<OrderItem>();
 
-            var fakehttpclientfactory = new FakeHttpClientFactory<OrderInfoResponse>(new FakeHttpMessageHandler<OrderInfoResponse>(fakemessage));
+            var fakehttpclientfactory = new FakeHttpClientFactory<OrderItem>(new FakeHttpMessageHandler<OrderItem>(fakemessage));
 
             var sut = new Bit4YouService(fakehttpclientfactory);
 
             var response = await sut.CreateOrder(new CreateOrderPayload());
 
-            response.IsError.Should().BeFalse();
-            response.Data.Should().NotBeNull();
             //response.Data.Count.Should().Be(fakemessage.Content.Transactions.Length);//todo:change
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("Orders")]
         [JsonDataSource(FilePath = "TestData\\Orders\\GetOrderInfo_OK.json")]
         public async Task GetOrderInfo_OK(string jsondatasource)
         {
-            var fakemessage = jsondatasource.ToFakeMessage<OrderInfoResponse>();
+            var fakemessage = jsondatasource.ToFakeMessage<OrderItem>();
 
-            var fakehttpclientfactory = new FakeHttpClientFactory<OrderInfoResponse>(new FakeHttpMessageHandler<OrderInfoResponse>(fakemessage));
+            var fakehttpclientfactory = new FakeHttpClientFactory<OrderItem>(new FakeHttpMessageHandler<OrderItem>(fakemessage));
 
             var sut = new Bit4YouService(fakehttpclientfactory);
 
             var response = await sut.GetOrderInfo(new OrderInfoPayload());
 
-            response.IsError.Should().BeFalse();
-            response.Data.Should().NotBeNull();
             //response.Data.Count.Should().Be(fakemessage.Content.Transactions.Length);//todo:change
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("Orders")]
         [JsonDataSource(FilePath = "TestData\\Orders\\GetOrders_OK.json")]
         public async Task GetOrders_OK(string jsondatasource)
         {
-            var fakemessage = jsondatasource.ToFakeMessage<List<OrderInfoResponse>>();
+            var fakemessage = jsondatasource.ToFakeMessage<List<OrderItem>>();
 
-            var fakehttpclientfactory = new FakeHttpClientFactory<List<OrderInfoResponse>>(new FakeHttpMessageHandler<List<OrderInfoResponse>>(fakemessage));
+            var fakehttpclientfactory = new FakeHttpClientFactory<List<OrderItem>>(new FakeHttpMessageHandler<List<OrderItem>>(fakemessage));
 
             var sut = new Bit4YouService(fakehttpclientfactory);
 
             var response = await sut.GetOrdersList(new OrdersListPayload());
 
-            response.IsError.Should().BeFalse();
-            response.Data.Should().NotBeNull();
             //response.Data.Count.Should().Be(fakemessage.Content.Transactions.Length);//todo:change
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("Orders")]
         [JsonDataSource(FilePath = "TestData\\Orders\\GetPendingOrders_OK.json")]
         public async Task GetPendingOrders_OK(string jsondatasource)
         {
-            var fakemessage = jsondatasource.ToFakeMessage<List<OrderInfoResponse>>();
+            var fakemessage = jsondatasource.ToFakeMessage<List<OrdersPendingItem>>();
 
-            var fakehttpclientfactory = new FakeHttpClientFactory<List<OrderInfoResponse>>(new FakeHttpMessageHandler<List<OrderInfoResponse>>(fakemessage));
+            var fakehttpclientfactory = new FakeHttpClientFactory<List<OrdersPendingItem>>(new FakeHttpMessageHandler<List<OrdersPendingItem>>(fakemessage));
 
             var sut = new Bit4YouService(fakehttpclientfactory);
 
             var response = await sut.GetOrdersPending(new OrderInfoPayload());
 
-            response.IsError.Should().BeFalse();
-            response.Data.Should().NotBeNull();
             //response.Data.Count.Should().Be(fakemessage.Content.Transactions.Length);//todo:change
         }
 
@@ -238,7 +214,7 @@ namespace Net.Arcanastudio.Bit4You.Tests
 
         #region Portfolio
 
-        [TestMethod]
+        [TestMethod, TestCategory("Portfolio")]
         [JsonDataSource(FilePath = "TestData\\Portfolio\\CancelPortfolioOrder_OK.json")]
         public async Task CancelPortfolioOrder_OK(string jsondatasource)
         {
@@ -250,12 +226,10 @@ namespace Net.Arcanastudio.Bit4You.Tests
 
             var response = await sut.CancelOrder(new CancelOrderPayload());
 
-            response.IsError.Should().BeFalse();
-            response.Data.Should().NotBeNull();
             //response.Data.Count.Should().Be(fakemessage.Content.Transactions.Length);//todo:change
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("Portfolio")]
         [JsonDataSource(FilePath = "TestData\\Portfolio\\ClosePortfolioPosition_OK.json")]
         public async Task ClosePortfolioPosition_OK(string jsondatasource)
         {
@@ -267,12 +241,10 @@ namespace Net.Arcanastudio.Bit4You.Tests
 
             var response = await sut.ClosePortfolioOrder(new ClosePortfolioOrderPayload());
 
-            response.IsError.Should().BeFalse();
-            response.Data.Should().NotBeNull();
             //response.Data.Count.Should().Be(fakemessage.Content.Transactions.Length);//todo:change
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("Portfolio")]
         [JsonDataSource(FilePath = "TestData\\Portfolio\\CreatePortfolioOrder_OK.json")]
         public async Task CreatePortfolioOrder_OK(string jsondatasource)
         {
@@ -284,29 +256,25 @@ namespace Net.Arcanastudio.Bit4You.Tests
 
             var response = await sut.CreatePortfolioOrder(new CreatePortfolioOrderPayload());
 
-            response.IsError.Should().BeFalse();
-            response.Data.Should().NotBeNull();
             //response.Data.Count.Should().Be(fakemessage.Content.Transactions.Length);//todo:change
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("Portfolio")]
         [JsonDataSource(FilePath = "TestData\\Portfolio\\GetPortfolioHistory_OK.json")]
         public async Task GetPortfolioHistory_OK(string jsondatasource)
         {
-            var fakemessage = jsondatasource.ToFakeMessage<GetPortfolioHistoryListResponse>();
+            var fakemessage = jsondatasource.ToFakeMessage<List<PortfolioHistoryResponseItem>>();
 
-            var fakehttpclientfactory = new FakeHttpClientFactory<GetPortfolioHistoryListResponse>(new FakeHttpMessageHandler<GetPortfolioHistoryListResponse>(fakemessage));
+            var fakehttpclientfactory = new FakeHttpClientFactory<List<PortfolioHistoryResponseItem>>(new FakeHttpMessageHandler<List<PortfolioHistoryResponseItem>>(fakemessage));
 
             var sut = new Bit4YouService(fakehttpclientfactory);
 
             var response = await sut.GetMarketHistory(new MarketHistoryPayload());
 
-            response.IsError.Should().BeFalse();
-            response.Data.Should().NotBeNull();
             //response.Data.Count.Should().Be(fakemessage.Content.Transactions.Length);//todo:change
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("Portfolio")]
         [JsonDataSource(FilePath = "TestData\\Portfolio\\GetPortfolioList_OK.json")]
         public async Task GetPortfolioList_OK(string jsondatasource)
         {
@@ -318,25 +286,21 @@ namespace Net.Arcanastudio.Bit4You.Tests
 
             var response = await sut.GetPortfolioList(new PortfolioListPayload());
 
-            response.IsError.Should().BeFalse();
-            response.Data.Should().NotBeNull();
             //response.Data.Count.Should().Be(fakemessage.Content.Transactions.Length);//todo:change
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("Portfolio")]
         [JsonDataSource(FilePath = "TestData\\Portfolio\\GetPortfolioOpenOrders_OK.json")]
         public async Task GetPortfolioOpenOrders_OK(string jsondatasource)
         {
-            var fakemessage = jsondatasource.ToFakeMessage<PortfolioOpenOrdersResponse>();
+            var fakemessage = jsondatasource.ToFakeMessage<List<PortfolioOpenOrderItem>>();
 
-            var fakehttpclientfactory = new FakeHttpClientFactory<PortfolioOpenOrdersResponse>(new FakeHttpMessageHandler<PortfolioOpenOrdersResponse>(fakemessage));
+            var fakehttpclientfactory = new FakeHttpClientFactory<List<PortfolioOpenOrderItem>>(new FakeHttpMessageHandler<List<PortfolioOpenOrderItem>>(fakemessage));
 
             var sut = new Bit4YouService(fakehttpclientfactory);
 
             var response = await sut.GetPortfolioOpenOrderList(new PortfolioOpenOrdersPayload());
 
-            response.IsError.Should().BeFalse();
-            response.Data.Should().NotBeNull();
             //response.Data.Count.Should().Be(fakemessage.Content.Transactions.Length);//todo:change
         }
 
@@ -344,41 +308,37 @@ namespace Net.Arcanastudio.Bit4You.Tests
 
         #region Market
 
-        [TestMethod]
+        [TestMethod, TestCategory("Market")]
         [JsonDataSource(FilePath = "TestData\\Market\\GetMarketHistory_OK.json")]
         public async Task GetMarketHistory_OK(string jsondatasource)
         {
-            var fakemessage = jsondatasource.ToFakeMessage<MarketHistoryResponse>();
+            var fakemessage = jsondatasource.ToFakeMessage<List<MarketHistoryResponseItem>>();
 
-            var fakehttpclientfactory = new FakeHttpClientFactory<MarketHistoryResponse>(new FakeHttpMessageHandler<MarketHistoryResponse>(fakemessage));
+            var fakehttpclientfactory = new FakeHttpClientFactory<List<MarketHistoryResponseItem>>(new FakeHttpMessageHandler<List<MarketHistoryResponseItem>>(fakemessage));
 
             var sut = new Bit4YouService(fakehttpclientfactory);
 
             var response = await sut.GetMarketHistory(new MarketHistoryPayload());
 
-            response.IsError.Should().BeFalse();
-            response.Data.Should().NotBeNull();
             //response.Data.Count.Should().Be(fakemessage.Content.Transactions.Length);//todo:change
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("Market")]
         [JsonDataSource(FilePath = "TestData\\Market\\GetMarketList_OK.json")]
         public async Task GetMarketList_OK(string jsondatasource)
         {
-            var fakemessage = jsondatasource.ToFakeMessage<List<MarketResponse>>();
+            var fakemessage = jsondatasource.ToFakeMessage<List<MarketResponseItem>>();
 
-            var fakehttpclientfactory = new FakeHttpClientFactory<List<MarketResponse>>(new FakeHttpMessageHandler<List<MarketResponse>>(fakemessage));
+            var fakehttpclientfactory = new FakeHttpClientFactory<List<MarketResponseItem>>(new FakeHttpMessageHandler<List<MarketResponseItem>>(fakemessage));
 
             var sut = new Bit4YouService(fakehttpclientfactory);
 
             var response = await sut.GetMarketList();
 
-            response.IsError.Should().BeFalse();
-            response.Data.Should().NotBeNull();
             //response.Data.Count.Should().Be(fakemessage.Content.Transactions.Length);//todo:change
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("Market")]
         [JsonDataSource(FilePath = "TestData\\Market\\GetMarketOrderBook_OK.json")]
         public async Task GetMarketOrderBook_OK(string jsondatasource)
         {
@@ -390,42 +350,36 @@ namespace Net.Arcanastudio.Bit4You.Tests
 
             var response = await sut.GetMarketOrderBook(new MarketOrderbookPayload());
 
-            response.IsError.Should().BeFalse();
-            response.Data.Should().NotBeNull();
             //response.Data.Count.Should().Be(fakemessage.Content.Transactions.Length);//todo:change
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("Market")]
         [JsonDataSource(FilePath = "TestData\\Market\\GetMarketSummaries_OK.json")]
         public async Task GetMarketSummaries_OK(string jsondatasource)
         {
-            var fakemessage = jsondatasource.ToFakeMessage<MarketSummaryResponse>();
+            var fakemessage = jsondatasource.ToFakeMessage<List<MarketSummaryItem>>();
 
-            var fakehttpclientfactory = new FakeHttpClientFactory<MarketSummaryResponse>(new FakeHttpMessageHandler<MarketSummaryResponse>(fakemessage));
+            var fakehttpclientfactory = new FakeHttpClientFactory<List<MarketSummaryItem>>(new FakeHttpMessageHandler<List<MarketSummaryItem>>(fakemessage));
 
             var sut = new Bit4YouService(fakehttpclientfactory);
 
             var response = await sut.GetMarketSummaries();
 
-            response.IsError.Should().BeFalse();
-            response.Data.Should().NotBeNull();
             //response.Data.Count.Should().Be(fakemessage.Content.Transactions.Length);//todo:change
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("Market")]
         [JsonDataSource(FilePath = "TestData\\Market\\GetMarketTick_OK.json")]
         public async Task GetMarketTick_OK(string jsondatasource)
         {
-            var fakemessage = jsondatasource.ToFakeMessage<MarketTicksResponse>();
+            var fakemessage = jsondatasource.ToFakeMessage<List<MarketTickItem>>();
 
-            var fakehttpclientfactory = new FakeHttpClientFactory<MarketTicksResponse>(new FakeHttpMessageHandler<MarketTicksResponse>(fakemessage));
+            var fakehttpclientfactory = new FakeHttpClientFactory<List<MarketTickItem>>(new FakeHttpMessageHandler<List<MarketTickItem>>(fakemessage));
 
             var sut = new Bit4YouService(fakehttpclientfactory);
 
             var response = await sut.GetMarketTicks(new MarketTicksPayload());
 
-            response.IsError.Should().BeFalse();
-            response.Data.Should().NotBeNull();
             //response.Data.Count.Should().Be(fakemessage.Content.Transactions.Length);//todo:change
         }
 

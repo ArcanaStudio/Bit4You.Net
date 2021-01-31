@@ -7,25 +7,25 @@ namespace Net.Arcanastudio.Bit4You.Service
 {
     internal interface IBit4YouService
     {
-        Task<ServiceResponse<TokenResponse>> GetToken(TokenPayload payload);
-        Task<ServiceResponse<List<MarketResponse>>> GetMarketList();
-        Task<ServiceResponse<List<MarketSummaryResponse>>> GetMarketSummaries();
-        Task<ServiceResponse<List<MarketSummaryResponse>>> GetMarketTicks(MarketTicksPayload payload);
-        Task<ServiceResponse<List<MarketSummaryResponse>>> GetMarketOrderBook(MarketOrderbookPayload payload);
-        Task<ServiceResponse<List<MarketHistoryResponse>>> GetMarketHistory(MarketHistoryPayload payload);
-        Task<ServiceResponse<List<WalletsBalancesResponse>>> GetWalletsBalance(WalletsBalancesPayload payload);
-        Task<ServiceResponse<List<WalletTransactionsResponse>>> GetWalletTransactions(WalletTransactionsPayload payload);
-        Task<ServiceResponse<List<WalletTransactionsResponse>>> WalletWithdrawFunds(WalletWithdrawFundsPayload payload);
-        Task<ServiceResponse<List<OrderInfoResponse>>> GetOrdersList(OrdersListPayload payload);
-        Task<ServiceResponse<OrderInfoResponse>> GetOrderInfo(OrderInfoPayload payload);
-        Task<ServiceResponse<List<OrderInfoResponse>>> GetOrdersPending(OrderInfoPayload payload);
-        Task<ServiceResponse<OrderInfoResponse>> CreateOrder(CreateOrderPayload payload);
-        Task<ServiceResponse<CancelOrderResponse>> CancelOrder(CancelOrderPayload payload);
-        Task<ServiceResponse<PorfolioListResponse>> GetPortfolioList(PortfolioListPayload payload);
-        Task<ServiceResponse<PortfolioOpenOrdersResponse>> GetPortfolioOpenOrderList(PortfolioOpenOrdersPayload payload);
-        Task<ServiceResponse<GetPortfolioHistoryListResponse>> GetPortfolioHistoryList(PortfolioHistoryListPayload payload);
-        Task<ServiceResponse<CreatePortfolioOrderResponse>> CreatePortfolioOrder(CreatePortfolioOrderPayload payload);
-        Task<ServiceResponse<ClosePortfolioOrderResponse>> ClosePortfolioOrder(ClosePortfolioOrderPayload payload);
-        Task<ServiceResponse<GetUserInfoResponse>> GetUserInfo();
+        Task<TokenResponse> GetToken(TokenPayload payload);
+        Task<GetMarketListResponse> GetMarketList();
+        Task<GetMarketSummariesResponse> GetMarketSummaries();
+        Task<GetMarketTicksResponse> GetMarketTicks(MarketTicksPayload payload);
+        Task<GetMarketOrderBookResponse> GetMarketOrderBook(MarketOrderbookPayload payload);
+        Task<GetMarketHistoryResponse> GetMarketHistory(MarketHistoryPayload payload);
+        Task<GetWalletsBalanceResponse> GetWalletsBalance(WalletsBalancesPayload payload);
+        Task<GetWalletTransactionsResponse> GetWalletTransactions(WalletTransactionsPayload payload);
+        Task<WalletWithdrawFundsResponse> WalletWithdrawFunds(WalletWithdrawFundsPayload payload);
+        Task<GetOrdersListResponse> GetOrdersList(OrdersListPayload payload);
+        Task<OrderItem> GetOrderInfo(OrderInfoPayload payload);
+        Task<GetOrdersPendingResponse> GetOrdersPending(OrderInfoPayload payload);
+        Task<OrderItem> CreateOrder(CreateOrderPayload payload);
+        Task<CancelOrderResponse> CancelOrder(CancelOrderPayload payload);
+        Task<PorfolioListResponse> GetPortfolioList(PortfolioListPayload payload);
+        Task<PortfolioOpenOrdersResponse> GetPortfolioOpenOrderList(PortfolioOpenOrdersPayload payload);
+        Task<GetPortfolioHistoryListResponse> GetPortfolioHistoryList(PortfolioHistoryListPayload payload);
+        Task<CreatePortfolioOrderResponse> CreatePortfolioOrder(CreatePortfolioOrderPayload payload);
+        Task<ClosePortfolioOrderResponse> ClosePortfolioOrder(ClosePortfolioOrderPayload payload);
+        Task<GetUserInfoResponse> GetUserInfo();
     }
 }

@@ -1,10 +1,13 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Net.Arcanastudio.Bit4You.Response
 {
-    internal class GetPortfolioHistoryListResponse
+    internal class GetPortfolioHistoryListResponse : BaseListResponse<PortfolioHistoryResponseItem>
     {
-        public PortfolioHistoryResponseItem[] Items { get; set; }
+        public GetPortfolioHistoryListResponse(List<PortfolioHistoryResponseItem> items) : base(items)
+        {
+        }
     }
 
     internal class PortfolioHistoryResponseItem

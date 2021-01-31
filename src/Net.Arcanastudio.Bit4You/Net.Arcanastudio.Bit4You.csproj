@@ -6,7 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Text.Json" Version="5.0.0" />
+    <PackageReference Include="System.Text.Json" Version="5.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Net.Arcanastudio.Bit4You.Net.Model\Net.Arcanastudio.Bit4You.Model.csproj" />
   </ItemGroup>
 
 </Project>

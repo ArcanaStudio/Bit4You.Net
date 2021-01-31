@@ -4,11 +4,11 @@ namespace Net.Arcanastudio.Bit4You.Payload
 {
     internal class MarketOrderbookPayload
     {
-        [JsonPropertyName("time")]
-        public string market { get; set; }
-        [JsonPropertyName("time")]
-        public int limit { get; set; }
-        [JsonPropertyName("time")]
-        public bool state { get; set; }
+        [JsonPropertyName("market")]
+        public string Market { get; set; }
+        [JsonPropertyName("limit")]
+        public int Limit { get; set; }
+        [JsonPropertyName("state")]
+        public bool State { get; set; }
     }
 }

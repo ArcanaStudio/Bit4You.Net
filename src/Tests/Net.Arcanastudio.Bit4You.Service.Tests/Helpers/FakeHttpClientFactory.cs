@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net.Http;
 using Arcana.Toolkit.Testing.MsTest;
 using Net.Arcanastudio.Bit4You.Service;
 
@@ -15,7 +16,7 @@ namespace Net.Arcanastudio.Bit4You.Tests.Helpers
 
         public HttpClient Create()
         {
-            var httpclient = new HttpClient(_fakeHttpMessageHandler);
+            var httpclient = new HttpClient(_fakeHttpMessageHandler) {BaseAddress = new Uri("http://localhost:9000")};
 
             return httpclient;
         }
