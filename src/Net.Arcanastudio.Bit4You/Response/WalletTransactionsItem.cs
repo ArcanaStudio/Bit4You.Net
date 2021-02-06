@@ -2,17 +2,17 @@
 
 namespace Net.Arcanastudio.Bit4You.Response
 {
-    internal class WalletTransactionsItem
+    internal class WalletTransactions
     {
         [JsonPropertyName("balance")]
         public float Balance { get; set; }
         [JsonPropertyName("pages")]
         public int Pages { get; set; }
         [JsonPropertyName("txs")]
-        public TransactionResponse[] Transactions { get; set; }
+        public Transaction[] Transactions { get; set; }
     }
 
-    internal class TransactionResponse
+    internal class Transaction
     {
         [JsonPropertyName("txid")]
         public string Id { get; set; }
@@ -29,10 +29,10 @@ namespace Net.Arcanastudio.Bit4You.Response
         [JsonPropertyName("type")]
         public string Type { get; set; }
         [JsonPropertyName("meta")]
-        public TransactionMetaResponse Meta { get; set; }
+        public TransactionMeta Meta { get; set; }
     }
 
-    internal class TransactionMetaResponse
+    internal class TransactionMeta
     {
         [JsonPropertyName("pending")]
         public bool Pending { get; set; }

@@ -1,11 +1,6 @@
-﻿using System.Collections.Generic;
-
-namespace Net.Arcanastudio.Bit4You.Response
+﻿namespace Net.Arcanastudio.Bit4You.Response
 {
-    internal class GetWalletTransactionsResponse : BaseListResponse<WalletTransactionsItem>
+    internal class GetWalletTransactionsResponse : WalletTransactions
     {
-        public GetWalletTransactionsResponse(List<WalletTransactionsItem> items) : base(items)
-        {
-        }
     }
 }

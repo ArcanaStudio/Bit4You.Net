@@ -35,7 +35,7 @@ namespace Net.Arcanastudio.Bit4You.Response
     public class Remaining
     {
         [JsonPropertyName("quantity")]
-        public int Quantity { get; set; }
+        public float Quantity { get; set; }
         [JsonPropertyName("iso")]
         public string Iso { get; set; }
     }

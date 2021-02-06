@@ -11,7 +11,7 @@ namespace Net.Arcanastudio.Bit4You.Service
         Task<GetMarketListResponse> GetMarketList();
         Task<GetMarketSummariesResponse> GetMarketSummaries();
         Task<GetMarketTicksResponse> GetMarketTicks(MarketTicksPayload payload);
-        Task<GetMarketOrderBookResponse> GetMarketOrderBook(MarketOrderbookPayload payload);
+        Task<GetMarketOrderBookResponse> GetMarketOrderBook(GetMarketOrderbookPayload payload);
         Task<GetMarketHistoryResponse> GetMarketHistory(MarketHistoryPayload payload);
         Task<GetWalletsBalanceResponse> GetWalletsBalance(WalletsBalancesPayload payload);
         Task<GetWalletTransactionsResponse> GetWalletTransactions(WalletTransactionsPayload payload);

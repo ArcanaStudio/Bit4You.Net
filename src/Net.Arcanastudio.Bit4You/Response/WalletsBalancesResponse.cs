@@ -15,9 +15,9 @@ namespace Net.Arcanastudio.Bit4You.Response
         [JsonPropertyName("tx")]
         public string Tx { get; set; }
         [JsonPropertyName("erc20")]
-        public string Erc20 { get; set; }
+        public bool Erc20 { get; set; }
         [JsonPropertyName("balance")]
-        public int Balance { get; set; }
+        public float Balance { get; set; }
         [JsonPropertyName("digits")]
         public int Digits { get; set; }
     }

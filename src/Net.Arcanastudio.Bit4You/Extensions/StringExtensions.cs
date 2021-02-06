@@ -2,7 +2,7 @@
 
 namespace Net.Arcanastudio.Bit4You.Extensions
 {
-    internal static class StriµngExtensions
+    internal static class StringExtensions
     {
         public static T Deserialize<T>(this string s)
         {

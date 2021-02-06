@@ -2,7 +2,7 @@
 
 namespace Net.Arcanastudio.Bit4You.Response
 {
-    internal class MarketOrderbookResponse
+    internal class GetMarketOrderbookResponse
     {
         [JsonPropertyName("market")]
         public string Market { get; set; }

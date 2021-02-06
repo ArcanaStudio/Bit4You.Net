@@ -57,11 +57,9 @@ namespace Net.Arcanastudio.Bit4You.Service
             return new GetMarketTicksResponse(list);
         }
 
-        public async Task<GetMarketOrderBookResponse> GetMarketOrderBook(MarketOrderbookPayload payload)
+        public async Task<GetMarketOrderBookResponse> GetMarketOrderBook(GetMarketOrderbookPayload payload)
         {
-            var list = await SendPostRequest<List<MarketOrderBookItem>>(Constants.Apis.GetMarketOrderbooks, payload).ConfigureAwait(false);
-
-            return new GetMarketOrderBookResponse(list);
+            return  await SendPostRequest<GetMarketOrderBookResponse>(Constants.Apis.GetMarketOrderbooks, payload).ConfigureAwait(false);
         }
 
         public async Task<GetMarketHistoryResponse> GetMarketHistory(MarketHistoryPayload payload)
@@ -80,9 +78,7 @@ namespace Net.Arcanastudio.Bit4You.Service
 
         public async Task<GetWalletTransactionsResponse> GetWalletTransactions(WalletTransactionsPayload payload)
         {
-            var list = await SendPostRequest<List<WalletTransactionsItem>>(Constants.Apis.GetWalletTransactions, payload).ConfigureAwait(false);
-
-            return new GetWalletTransactionsResponse(list);
+           return await SendPostRequest<GetWalletTransactionsResponse>(Constants.Apis.GetWalletTransactions, payload).ConfigureAwait(false);
         }
 
         public async Task<WalletWithdrawFundsResponse> WalletWithdrawFunds(WalletWithdrawFundsPayload payload)
@@ -123,11 +119,13 @@ namespace Net.Arcanastudio.Bit4You.Service
         {
             return await SendPostRequest<PorfolioListResponse>(Constants.Apis.GetPortfolioList, payload).ConfigureAwait(false);
         }
-
+  
         public async Task<PortfolioOpenOrdersResponse> GetPortfolioOpenOrderList(PortfolioOpenOrdersPayload payload)
         {
-            return await SendPostRequest<PortfolioOpenOrdersResponse>(Constants.Apis.GetPortfolioOpenOrderList, payload).ConfigureAwait(false);
-        }
+            var list = await SendPostRequest<List<PortfolioOpenOrderItem>>(Constants.Apis.GetPortfolioOpenOrderList, payload).ConfigureAwait(false);
+
+            return new PortfolioOpenOrdersResponse(list);
+    }
 
         public async Task<GetPortfolioHistoryListResponse> GetPortfolioHistoryList(PortfolioHistoryListPayload payload)
         {
