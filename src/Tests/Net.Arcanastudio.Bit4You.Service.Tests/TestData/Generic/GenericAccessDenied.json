@@ -1,5 +1,5 @@
 {
-  "returncode": 200,
+  "returncode": 401,
   "content": {
     "error": "Access denied to the requested api (wallet/transactions)"
   }

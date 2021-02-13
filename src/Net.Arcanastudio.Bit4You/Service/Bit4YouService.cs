@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Reflection;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Net.Arcanastudio.Bit4You.Extensions;
@@ -57,9 +60,9 @@ namespace Net.Arcanastudio.Bit4You.Service
             return new GetMarketTicksResponse(list);
         }
 
-        public async Task<GetMarketOrderBookResponse> GetMarketOrderBook(GetMarketOrderbookPayload payload)
+        public async Task<GetMarketOrderBookResponse> GetMarketOrderBook(GetMarketOrderBookPayload payload)
         {
-            return  await SendPostRequest<GetMarketOrderBookResponse>(Constants.Apis.GetMarketOrderbooks, payload).ConfigureAwait(false);
+            return await SendPostRequest<GetMarketOrderBookResponse>(Constants.Apis.GetMarketOrderbooks, payload).ConfigureAwait(false);
         }
 
         public async Task<GetMarketHistoryResponse> GetMarketHistory(MarketHistoryPayload payload)
@@ -137,9 +140,9 @@ namespace Net.Arcanastudio.Bit4You.Service
             return await SendPostRequest<CreatePortfolioOrderResponse>(Constants.Apis.CreatePortfolioOrder, payload).ConfigureAwait(false);
         }
 
-        public async Task<ClosePortfolioOrderResponse> ClosePortfolioOrder(ClosePortfolioOrderPayload payload)
+        public async Task<ClosePortfolioPositionResponse> ClosePortfolioPosition(ClosePortfolioPositionPayload payload)
         {
-            return await SendPostRequest<ClosePortfolioOrderResponse>(Constants.Apis.ClosePortfolioOrder, payload).ConfigureAwait(false);
+            return await SendPostRequest<ClosePortfolioPositionResponse>(Constants.Apis.ClosePortfolioOrder, payload).ConfigureAwait(false);
         }
 
         private async Task<T> SendGetRequest<T>(string url)
@@ -161,25 +164,42 @@ namespace Net.Arcanastudio.Bit4You.Service
         private async Task<T> TreatResponse<T>(HttpResponseMessage responsemessage)
         {
             var requestresponse = new RequestResponse();
+            Bit4YouException exception;
 
             var responsedata = await responsemessage.Content.ReadAsStringAsync().ConfigureAwait(false);
             requestresponse.StatusCode = responsemessage.StatusCode;
 
             if (responsemessage.IsSuccessStatusCode)
-                return responsedata.Deserialize<T>();
+            {
+                var response = responsedata.Deserialize<T>();
+                // errors also returns 200 OK, so we try this hack
+                if (!IsObjectDefault(response))
+                    return response;
+            }
 
             try
             {
                 var error = responsedata.Deserialize<RequestError>();
-                throw new Bit4YouException(responsemessage.StatusCode, error.ToErrorInfo());
+                exception =  new Bit4YouException(responsemessage.StatusCode, error.ToErrorInfo());
             }
             catch 
             {
-                throw new Bit4YouException(responsemessage.StatusCode, new Bit4YouException.ErrorInfo{Message = responsedata, Status = "Unknown exception"});
+                exception = new Bit4YouException(responsemessage.StatusCode, new Bit4YouException.ErrorInfo{Message = responsedata, Status = "Unknown exception"});
             }
-          
 
-          
+            throw exception;
+        }
+
+        private bool IsObjectDefault(object o)
+        {
+            var secondinstance = Activator.CreateInstance(o.GetType());
+
+            var props = o.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public).Where(d => d.CanRead);
+
+
+            var isdefault = props.All(d => (d.GetValue(o) == null || d.GetValue(o).Equals(d.GetValue(secondinstance))));
+
+            return isdefault;
         }
 
         internal class RequestError

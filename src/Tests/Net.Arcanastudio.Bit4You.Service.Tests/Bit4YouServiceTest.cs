@@ -4,6 +4,7 @@ using Arcana.Toolkit.Testing.MsTest;
 using Arcana.Toolkit.Testing.MsTest.Attributes;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Net.Arcanastudio.Bit4You.Model.Exceptions;
 using Net.Arcanastudio.Bit4You.Payload;
 using Net.Arcanastudio.Bit4You.Response;
 using Net.Arcanastudio.Bit4You.Service;
@@ -52,49 +53,86 @@ namespace Net.Arcanastudio.Bit4You.Tests
             response.IdNumber.Should().Be(fakemessage.Content.IdNumber);
         }
 
-        [TestMethod, TestCategory("UserInfo")]
+        [TestMethod, TestCategory("Generic")]
         [JsonDataSource(FilePath = "TestData\\Generic\\GenericAccessDenied.json")]
-        public async Task GetUserInfo_AccessDenied(string jsondatasource)
+        public async Task Generic_AccessDenied(string jsondatasource)
         {
-            var fakemessage = jsondatasource.ToFakeMessage<GetUserInfoResponse>();
+            var fakemessage = jsondatasource.ToFakeMessage<Bit4YouException.ErrorInfo>();
 
-            var fakehttpclientfactory = new FakeHttpClientFactory<GetUserInfoResponse>(new FakeHttpMessageHandler<GetUserInfoResponse>(fakemessage));
+            var fakehttpclientfactory = new FakeHttpClientFactory<Bit4YouException.ErrorInfo>(new FakeHttpMessageHandler<Bit4YouException.ErrorInfo>(fakemessage));
 
             var sut = new Bit4YouService(fakehttpclientfactory);
 
-            var response = await sut.GetUserInfo();
+            Bit4YouException exception = null;
 
-            response.IdNumber.Should().Be(fakemessage.Content.IdNumber);
+            try
+            {
+                var response = await sut.GetUserInfo();
+
+            }
+            catch (Bit4YouException e)
+            {
+                exception = e;
+            }
+
+            exception.Should().NotBeNull();
+            exception.Info.Message.Should().Be(fakemessage.Content.Message);
+            exception.Code.Should().Be(fakemessage.ReturnCode);
+
         }
 
-        [TestMethod, TestCategory("UserInfo")]
+        [TestMethod, TestCategory("Generic")]
         [JsonDataSource(FilePath = "TestData\\Generic\\GenericError.json")]
-        public async Task GetUserInfo_Error(string jsondatasource)
+        public async Task Generic_Error(string jsondatasource)
         {
-            var fakemessage = jsondatasource.ToFakeMessage<GetUserInfoResponse>();
+            var fakemessage = jsondatasource.ToFakeMessage<Bit4YouException.ErrorInfo>();
 
-            var fakehttpclientfactory = new FakeHttpClientFactory<GetUserInfoResponse>(new FakeHttpMessageHandler<GetUserInfoResponse>(fakemessage));
+            var fakehttpclientfactory = new FakeHttpClientFactory<Bit4YouException.ErrorInfo>(new FakeHttpMessageHandler<Bit4YouException.ErrorInfo>(fakemessage));
 
             var sut = new Bit4YouService(fakehttpclientfactory);
 
-            var response = await sut.GetUserInfo();
+            Bit4YouException exception = null;
 
-            response.IdNumber.Should().Be(fakemessage.Content.IdNumber);
+            try
+            {
+                var response = await sut.GetUserInfo();
+
+            }
+            catch (Bit4YouException e)
+            {
+                exception = e;
+            }
+
+            exception.Should().NotBeNull();
+            exception.Info.Message.Should().Be(fakemessage.Content.Message);
+            exception.Code.Should().Be(fakemessage.ReturnCode);
         }
 
-        [TestMethod, TestCategory("UserInfo")]
+        [TestMethod, TestCategory("Generic")]
         [JsonDataSource(FilePath = "TestData\\Generic\\GenericReconnect.json")]
-        public async Task GetUserInfo_Reconnect(string jsondatasource)
+        public async Task Generic_Reconnect(string jsondatasource)
         {
-            var fakemessage = jsondatasource.ToFakeMessage<GetUserInfoResponse>();
+            var fakemessage = jsondatasource.ToFakeMessage<Bit4YouException.ErrorInfo>();
 
-            var fakehttpclientfactory = new FakeHttpClientFactory<GetUserInfoResponse>(new FakeHttpMessageHandler<GetUserInfoResponse>(fakemessage));
+            var fakehttpclientfactory = new FakeHttpClientFactory<Bit4YouException.ErrorInfo>(new FakeHttpMessageHandler<Bit4YouException.ErrorInfo>(fakemessage));
 
             var sut = new Bit4YouService(fakehttpclientfactory);
 
-            var response = await sut.GetUserInfo();
+            Bit4YouException exception = null;
 
-            response.IdNumber.Should().Be(fakemessage.Content.IdNumber);
+            try
+            {
+                var response = await sut.GetUserInfo();
+
+            }
+            catch (Bit4YouException e)
+            {
+                exception = e;
+            }
+
+            exception.Should().NotBeNull();
+            exception.Info.Message.Should().Be(fakemessage.Content.Message);
+            exception.Code.Should().Be(fakemessage.ReturnCode);
         }
 
         #endregion
@@ -139,9 +177,9 @@ namespace Net.Arcanastudio.Bit4You.Tests
         [JsonDataSource(FilePath = "TestData\\Orders\\CancelOrder_OK.json")]
         public async Task CancelOrder_OK(string jsondatasource)
         {
-            var fakemessage = jsondatasource.ToFakeMessage<PortfolioCancelOrderResponse>();
+            var fakemessage = jsondatasource.ToFakeMessage<CancelOrderResponse>();
 
-            var fakehttpclientfactory = new FakeHttpClientFactory<PortfolioCancelOrderResponse>(new FakeHttpMessageHandler<PortfolioCancelOrderResponse>(fakemessage));
+            var fakehttpclientfactory = new FakeHttpClientFactory<CancelOrderResponse>(new FakeHttpMessageHandler<CancelOrderResponse>(fakemessage));
 
             var sut = new Bit4YouService(fakehttpclientfactory);
 
@@ -233,13 +271,13 @@ namespace Net.Arcanastudio.Bit4You.Tests
         [JsonDataSource(FilePath = "TestData\\Portfolio\\ClosePortfolioPosition_OK.json")]
         public async Task ClosePortfolioPosition_OK(string jsondatasource)
         {
-            var fakemessage = jsondatasource.ToFakeMessage<ClosePortfolioOrderResponse>();
+            var fakemessage = jsondatasource.ToFakeMessage<ClosePortfolioPositionResponse>();
 
-            var fakehttpclientfactory = new FakeHttpClientFactory<ClosePortfolioOrderResponse>(new FakeHttpMessageHandler<ClosePortfolioOrderResponse>(fakemessage));
+            var fakehttpclientfactory = new FakeHttpClientFactory<ClosePortfolioPositionResponse>(new FakeHttpMessageHandler<ClosePortfolioPositionResponse>(fakemessage));
 
             var sut = new Bit4YouService(fakehttpclientfactory);
 
-            var response = await sut.ClosePortfolioOrder(new ClosePortfolioOrderPayload());
+            var response = await sut.ClosePortfolioPosition(new ClosePortfolioPositionPayload());
 
             //response.Data.Count.Should().Be(fakemessage.Content.Transactions.Length);//todo:change
         }
@@ -342,13 +380,13 @@ namespace Net.Arcanastudio.Bit4You.Tests
         [JsonDataSource(FilePath = "TestData\\Market\\GetMarketOrderBook_OK.json")]
         public async Task GetMarketOrderBook_OK(string jsondatasource)
         {
-            var fakemessage = jsondatasource.ToFakeMessage<GetMarketOrderbookResponse>();
+            var fakemessage = jsondatasource.ToFakeMessage<GetMarketOrderBookResponse>();
 
-            var fakehttpclientfactory = new FakeHttpClientFactory<GetMarketOrderbookResponse>(new FakeHttpMessageHandler<GetMarketOrderbookResponse>(fakemessage));
+            var fakehttpclientfactory = new FakeHttpClientFactory<GetMarketOrderBookResponse>(new FakeHttpMessageHandler<GetMarketOrderBookResponse>(fakemessage));
 
             var sut = new Bit4YouService(fakehttpclientfactory);
 
-            var response = await sut.GetMarketOrderBook(new GetMarketOrderbookPayload());
+            var response = await sut.GetMarketOrderBook(new GetMarketOrderBookPayload());
 
             //response.Data.Count.Should().Be(fakemessage.Content.Transactions.Length);//todo:change
         }
@@ -363,7 +401,7 @@ namespace Net.Arcanastudio.Bit4You.Tests
 
             var sut = new Bit4YouService(fakehttpclientfactory);
 
-            var response = await sut.GetMarketOrderBook(new GetMarketOrderbookPayload());
+            var response = await sut.GetMarketOrderBook(new GetMarketOrderBookPayload());
 
             //response.Data.Count.Should().Be(fakemessage.Content.Transactions.Length);//todo:change
         }

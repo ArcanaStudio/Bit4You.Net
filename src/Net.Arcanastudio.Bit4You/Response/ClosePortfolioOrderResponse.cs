@@ -1,7 +1,12 @@
-﻿namespace Net.Arcanastudio.Bit4You.Response
+﻿using System.Text.Json.Serialization;
+
+namespace Net.Arcanastudio.Bit4You.Response
 {
-    internal class ClosePortfolioOrderResponse
+    internal class ClosePortfolioPositionResponse
     {
-        //todo: get response
+        [JsonPropertyName("status")]
+        public string Status { get; set; }
+        [JsonPropertyName("message")]
+        public string Message { get; set; }
     }
 }

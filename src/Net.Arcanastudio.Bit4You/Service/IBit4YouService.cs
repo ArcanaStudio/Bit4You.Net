@@ -11,7 +11,7 @@ namespace Net.Arcanastudio.Bit4You.Service
         Task<GetMarketListResponse> GetMarketList();
         Task<GetMarketSummariesResponse> GetMarketSummaries();
         Task<GetMarketTicksResponse> GetMarketTicks(MarketTicksPayload payload);
-        Task<GetMarketOrderBookResponse> GetMarketOrderBook(GetMarketOrderbookPayload payload);
+        Task<GetMarketOrderBookResponse> GetMarketOrderBook(GetMarketOrderBookPayload payload);
         Task<GetMarketHistoryResponse> GetMarketHistory(MarketHistoryPayload payload);
         Task<GetWalletsBalanceResponse> GetWalletsBalance(WalletsBalancesPayload payload);
         Task<GetWalletTransactionsResponse> GetWalletTransactions(WalletTransactionsPayload payload);
@@ -25,7 +25,7 @@ namespace Net.Arcanastudio.Bit4You.Service
         Task<PortfolioOpenOrdersResponse> GetPortfolioOpenOrderList(PortfolioOpenOrdersPayload payload);
         Task<GetPortfolioHistoryListResponse> GetPortfolioHistoryList(PortfolioHistoryListPayload payload);
         Task<CreatePortfolioOrderResponse> CreatePortfolioOrder(CreatePortfolioOrderPayload payload);
-        Task<ClosePortfolioOrderResponse> ClosePortfolioOrder(ClosePortfolioOrderPayload payload);
+        Task<ClosePortfolioPositionResponse> ClosePortfolioPosition(ClosePortfolioPositionPayload payload);
         Task<GetUserInfoResponse> GetUserInfo();
     }
 }

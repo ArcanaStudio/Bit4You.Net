@@ -1,0 +1,6 @@
+{
+  "returncode": 500,
+  "content": {
+    "message": "Order not found or already closed"
+  }
+}

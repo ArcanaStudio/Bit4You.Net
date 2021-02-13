@@ -6,6 +6,7 @@ namespace Net.Arcanastudio.Bit4You.Response
     public class GetUserInfoResponse
     {
         [JsonPropertyName("sub")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.Never)]
         public int Sub { get; set; }
         [JsonPropertyName("iss")]
         public string Iss { get; set; }

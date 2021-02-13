@@ -6,7 +6,7 @@ namespace Net.Arcanastudio.Bit4You.Extensions
     {
         public static T Deserialize<T>(this string s)
         {
-            return string.IsNullOrWhiteSpace(s) ? default : JsonSerializer.Deserialize<T>(s);
+            return string.IsNullOrWhiteSpace(s) ? default : JsonSerializer.Deserialize<T>(s, new JsonSerializerOptions{PropertyNameCaseInsensitive = true});
         }
     }
 }

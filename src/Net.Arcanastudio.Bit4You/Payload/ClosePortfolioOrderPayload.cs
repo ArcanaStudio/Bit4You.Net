@@ -2,7 +2,7 @@
 
 namespace Net.Arcanastudio.Bit4You.Payload
 {
-    internal class ClosePortfolioOrderPayload : SimulablePayloadBase
+    internal class ClosePortfolioPositionPayload : SimulablePayloadBase
     {
         [JsonPropertyName("id")]
         public int OrderId { get; set; }

@@ -16,7 +16,5 @@ namespace Net.Arcanastudio.Bit4You.Response
         public int AuthenticationExpiration { get; set; }
         [JsonPropertyName("code")]
         public int Code { get; set; }
-        [JsonPropertyName("error")]
-        public string Error { get; set; }
     }
 }
