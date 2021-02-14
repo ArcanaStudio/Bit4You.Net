@@ -7,6 +7,11 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Net.Arcanastudio.Bit4You.Model.Exceptions;
 using Net.Arcanastudio.Bit4You.Payload;
 using Net.Arcanastudio.Bit4You.Response;
+using Net.Arcanastudio.Bit4You.Response.GetUserInfo;
+using Net.Arcanastudio.Bit4You.Response.Market;
+using Net.Arcanastudio.Bit4You.Response.Orders;
+using Net.Arcanastudio.Bit4You.Response.Portfolio;
+using Net.Arcanastudio.Bit4You.Response.Token;
 using Net.Arcanastudio.Bit4You.Service;
 using Net.Arcanastudio.Bit4You.Tests.Helpers;
 

@@ -11,6 +11,12 @@ using Net.Arcanastudio.Bit4You.Extensions;
 using Net.Arcanastudio.Bit4You.Model.Exceptions;
 using Net.Arcanastudio.Bit4You.Payload;
 using Net.Arcanastudio.Bit4You.Response;
+using Net.Arcanastudio.Bit4You.Response.Generic;
+using Net.Arcanastudio.Bit4You.Response.GetUserInfo;
+using Net.Arcanastudio.Bit4You.Response.Market;
+using Net.Arcanastudio.Bit4You.Response.Orders;
+using Net.Arcanastudio.Bit4You.Response.Portfolio;
+using Net.Arcanastudio.Bit4You.Response.Token;
 
 namespace Net.Arcanastudio.Bit4You.Service
 {

@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using Net.Arcanastudio.Bit4You.Response.Generic;
+using Net.Arcanastudio.Bit4You.Response.Market;
 
 namespace Net.Arcanastudio.Bit4You.Response
 {

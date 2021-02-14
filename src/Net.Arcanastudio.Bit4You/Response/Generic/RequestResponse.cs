@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace Net.Arcanastudio.Bit4You.Response
+namespace Net.Arcanastudio.Bit4You.Response.Generic
 {
     public class RequestResponse
     {

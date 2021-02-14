@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
+using Net.Arcanastudio.Bit4You.Response.Generic;
 
-namespace Net.Arcanastudio.Bit4You.Response
+namespace Net.Arcanastudio.Bit4You.Response.Market
 {
     internal class GetMarketSummariesResponse : BaseListResponse<MarketHistoryResponseItem>
     {

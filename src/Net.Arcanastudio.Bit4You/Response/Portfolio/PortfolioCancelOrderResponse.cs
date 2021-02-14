@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Net.Arcanastudio.Bit4You.Response
+namespace Net.Arcanastudio.Bit4You.Response.Portfolio
 {
     public class PortfolioCancelOrderResponse
     {
