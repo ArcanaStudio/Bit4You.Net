@@ -13,4 +13,8 @@
     <ProjectReference Include="..\Net.Arcanastudio.Bit4You.Net.Model\Net.Arcanastudio.Bit4You.Model.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Payload\UserInfo\" />
+  </ItemGroup>
+
 </Project>

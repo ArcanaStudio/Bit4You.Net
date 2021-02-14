@@ -4,12 +4,15 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Reflection;
-using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Net.Arcanastudio.Bit4You.Extensions;
 using Net.Arcanastudio.Bit4You.Model.Exceptions;
-using Net.Arcanastudio.Bit4You.Payload;
+using Net.Arcanastudio.Bit4You.Payload.Market;
+using Net.Arcanastudio.Bit4You.Payload.Orders;
+using Net.Arcanastudio.Bit4You.Payload.Portfolio;
+using Net.Arcanastudio.Bit4You.Payload.Token;
+using Net.Arcanastudio.Bit4You.Payload.Wallet;
 using Net.Arcanastudio.Bit4You.Response;
 using Net.Arcanastudio.Bit4You.Response.Generic;
 using Net.Arcanastudio.Bit4You.Response.GetUserInfo;
@@ -32,9 +35,9 @@ namespace Net.Arcanastudio.Bit4You.Service
             _httpClient = httpservice.Create();
         }
 
-        public async Task<TokenResponse> GetToken(TokenPayload payload)
+        public async Task<GetTokenResponse> GetToken(GetTokenPayload payload)
         {
-            var response = await SendPostRequest<TokenResponse>(Constants.Apis.GetToken, payload).ConfigureAwait(false);
+            var response = await SendPostRequest<GetTokenResponse>(Constants.Apis.GetToken, payload).ConfigureAwait(false);
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", response.Token);
 
             return response;

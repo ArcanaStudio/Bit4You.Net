@@ -5,7 +5,11 @@ using Arcana.Toolkit.Testing.MsTest.Attributes;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Net.Arcanastudio.Bit4You.Model.Exceptions;
-using Net.Arcanastudio.Bit4You.Payload;
+using Net.Arcanastudio.Bit4You.Payload.Market;
+using Net.Arcanastudio.Bit4You.Payload.Orders;
+using Net.Arcanastudio.Bit4You.Payload.Portfolio;
+using Net.Arcanastudio.Bit4You.Payload.Token;
+using Net.Arcanastudio.Bit4You.Payload.Wallet;
 using Net.Arcanastudio.Bit4You.Response;
 using Net.Arcanastudio.Bit4You.Response.GetUserInfo;
 using Net.Arcanastudio.Bit4You.Response.Market;
@@ -26,13 +30,13 @@ namespace Net.Arcanastudio.Bit4You.Tests
         [JsonDataSource(FilePath = "TestData\\Token\\GetToken_OK.json")]
         public async Task GetToken_OK(string jsondatasource)
         {
-            var fakemessage = jsondatasource.ToFakeMessage<TokenResponse>();
+            var fakemessage = jsondatasource.ToFakeMessage<GetTokenResponse>();
 
-            var fakehttpclientfactory = new FakeHttpClientFactory<TokenResponse>(new FakeHttpMessageHandler<TokenResponse>(fakemessage));
+            var fakehttpclientfactory = new FakeHttpClientFactory<GetTokenResponse>(new FakeHttpMessageHandler<GetTokenResponse>(fakemessage));
 
             var sut = new Bit4YouService(fakehttpclientfactory);
 
-            var response = await sut.GetToken(new TokenPayload());
+            var response = await sut.GetToken(new GetTokenPayload());
 
             response.Token.Should().Be(fakemessage.Content.Token);
         }

@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Net.Arcanastudio.Bit4You.Payload;
+﻿using System.Threading.Tasks;
+using Net.Arcanastudio.Bit4You.Payload.Market;
+using Net.Arcanastudio.Bit4You.Payload.Orders;
+using Net.Arcanastudio.Bit4You.Payload.Portfolio;
+using Net.Arcanastudio.Bit4You.Payload.Token;
+using Net.Arcanastudio.Bit4You.Payload.Wallet;
 using Net.Arcanastudio.Bit4You.Response;
 using Net.Arcanastudio.Bit4You.Response.GetUserInfo;
 using Net.Arcanastudio.Bit4You.Response.Market;
@@ -12,7 +15,7 @@ namespace Net.Arcanastudio.Bit4You.Service
 {
     internal interface IBit4YouService
     {
-        Task<TokenResponse> GetToken(TokenPayload payload);
+        Task<GetTokenResponse> GetToken(GetTokenPayload payload);
         Task<GetMarketListResponse> GetMarketList();
         Task<GetMarketSummariesResponse> GetMarketSummaries();
         Task<GetMarketTicksResponse> GetMarketTicks(MarketTicksPayload payload);
